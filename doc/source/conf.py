@@ -17,7 +17,7 @@ import sys
 import openstackdocstheme
 
 # -- Chef OpenStack configuration --------------------------------------------
-target_name = 'chef-openstack-docs'
+target_name = 'openstack-chef'
 description = 'Chef OpenStack uses Chef to deploy OpenStack environments.'
 previous_series_name = 'pike'
 current_series_name = 'queens'
@@ -28,34 +28,6 @@ title = u'Chef OpenStack Documentation'
 category = 'Miscellaneous'
 copyright = u'2014-2018, Chef OpenStack Contributors'
 author = u'Chef OpenStack Contributors'
-
-current_series = openstackdocstheme.ext._get_series_name()
-
-if current_series == "latest":
-  watermark = "Pre-release"
-  latest_tag = "master"
-  branch = "master"
-  upgrade_warning = "Upgrading to master is not recommended. Master is under heavy development, and is not stable."
-else:
-  watermark = series_names = current_series.capitalize()
-  latest_tag = os.popen('git describe --abbrev=0 --tags').read().strip('\n')
-  branch = "stable/{}".format(current_series)
-  upgrade_warning = "The upgrade is always under active development."
-
-# Substitutions loader
-rst_epilog = """
-.. |current_release_git_branch_name| replace:: {current_release_git_branch_name}
-.. |previous_release_formal_name| replace:: {previous_release_formal_name}
-.. |current_release_formal_name| replace:: {current_release_formal_name}
-.. |latest_tag| replace:: {latest_tag}
-.. |upgrade_warning| replace:: {upgrade_warning}
-""".format(
-  current_release_git_branch_name=branch,
-  previous_release_formal_name=previous_series_name.capitalize(),
-  current_release_formal_name=current_series_name.capitalize(),
-  latest_tag=latest_tag,
-  upgrade_warning=upgrade_warning,
-)
 
 # -- General configuration ---------------------------------------------------
 
@@ -86,7 +58,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # openstackdocstheme options
-repository_name = 'openstack/openstack-chef-repo'
+repository_name = 'openstack/openstack-chef'
 bug_project = 'openstack-chef'
 bug_tag = ''
 
@@ -146,7 +118,7 @@ html_last_updated_fmt = '%Y-%m-%d %H:%M'
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'chef-openstack-docs'
+htmlhelp_basename = target_name + '-docs'
 
 # If true, publish source files
 html_copy_source = False
@@ -206,12 +178,3 @@ pdf_documents = [
     (master_doc, target_name,
      title, author)
 ]
-
-# -- Options for sphinxmark -----------------------------------------------
-sphinxmark_enable = True
-sphinxmark_div = 'docs-body'
-sphinxmark_image = 'text'
-sphinxmark_text = watermark
-sphinxmark_text_color = (128, 128, 128)
-sphinxmark_text_size = 70
-
