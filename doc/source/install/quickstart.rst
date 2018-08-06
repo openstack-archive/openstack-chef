@@ -1,14 +1,14 @@
 .. _quickstart-test-kitchen:
 
-`Test Kitchen`_ is a no-fuss, no BS way to get a Chef OpenStack build for:
+`Kitchen`_ is a no-fuss, no BS way to get a Chef OpenStack build for:
 
 * development of OpenStack or applications on top of it
 * a reference for how the services fit together
 * a simple lab environment
 
-.. _Test Kitchen: https://kitchen.ci/
+.. _Kitchen: https://kitchen.ci/
 
-Test Kitchen builds are not recommended for production deployments, but they can work in
+Kitchen builds are not recommended for production deployments, but they can work in
 a pinch when you just need OpenStack.
 
 At an absolute minimum, you should use the following resources. What is listed
@@ -62,9 +62,9 @@ Start by cloing the OpenStack chef-repo repository and changing into the root di
 
 .. code-block:: shell-session
 
-  # git clone https://git.openstack.org/openstack/openstack-chef-repo \
-      /opt/openstack-chef-repo
-  # cd openstack-chef-repo
+  # git clone https://git.openstack.org/openstack/openstack-chef \
+      /opt/openstack-chef
+  # cd openstack-chef
 
 Next, switch to the applicable branch/tag to be deployed. Note that deploying
 from the head of a branch may result in an unstable build due to changes in

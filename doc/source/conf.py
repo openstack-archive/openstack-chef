@@ -86,7 +86,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # openstackdocstheme options
-repository_name = 'openstack/openstack-chef-repo'
+repository_name = 'openstack/openstack-chef'
 bug_project = 'openstack-chef'
 bug_tag = ''
 

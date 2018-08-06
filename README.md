@@ -1,7 +1,7 @@
 Team and repository tags
 ========================
 
-[![Team and repository tags](http://governance.openstack.org/badges/openstack-chef-repo.svg)](http://governance.openstack.org/reference/tags/index.html)
+[![Team and repository tags](http://governance.openstack.org/badges/openstack-chef.svg)](http://governance.openstack.org/reference/tags/index.html)
 
 <!-- Change things from this point on -->
 
@@ -22,8 +22,7 @@ With the `master` branch of the cookbooks, which is currently tied to the base
 OpenStack Ocata release, this supports deploying to Ubuntu 16.04 and CentOS 7
 in monolithic, or allinone, and non-HA multinode configurations with Neutron.
 The cookbooks support a fully HA configuration, but we do not test for that as
-there are far numerous paths to
-HA.
+there are far numerous paths to HA.
 
 ## Prerequisites
 
@@ -34,8 +33,8 @@ HA.
 ### Getting the Code (this repo)
 
 ```shell
-$ git clone https://github.com/openstack/openstack-chef-repo.git
-$ cd openstack-chef-repo
+$ git clone https://github.com/openstack/openstack-chef.git
+$ cd openstack-chef
 ```
 
 The OpenStack cookbooks by default use encrypted data bags for configuring

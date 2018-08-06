@@ -1,6 +1,6 @@
 # # encoding: utf-8
 
-# Inspec test for openstack-chef-repo
+# Inspec test for openstack-chef
 
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
