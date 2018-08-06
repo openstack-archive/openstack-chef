@@ -146,7 +146,7 @@ html_last_updated_fmt = '%Y-%m-%d %H:%M'
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'chef-openstack-docs'
+htmlhelp_basename = target_name + '-docs'
 
 # If true, publish source files
 html_copy_source = False
