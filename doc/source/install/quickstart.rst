@@ -77,11 +77,11 @@ is usually best to checkout the latest tagged version.
    # git branch -v
 
    ## Checkout the stable branch
-   # git checkout |current_release_git_branch_name|
+   # git checkout master
 
 .. note::
-   The |current_release_formal_name| release is compatible with Ubuntu 16.04
-   (Xenial Xerus) and CentOS 7
+   The master release is compatible with Ubuntu 18.04
+   (Bionic Beaver) and CentOS 7
 
 By default the cookbooks deploy all OpenStack services with sensible defaults
 for the purpose of a gate check, development or testing system.
