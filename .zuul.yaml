@@ -30,5 +30,5 @@
 
 - project:
     templates:
-      - build-openstack-sphinx-docs-python3
+      - publish-openstack-docs-pti
       - openstack-chef-jobs
