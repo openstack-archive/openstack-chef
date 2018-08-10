@@ -93,10 +93,10 @@ use of different services or test new cookbooks.
 To use a different driver for Test Kitchen, such as for a multi-node
 development environment, pass the ``KITCHEN_YAML`` environment variable as an
 additional option to the ``kitchen`` command. For example, if you want to
-deploy a multi-node development environment, instead of an AIO, then execute:
+deploy a containerized development environment, instead of an AIO, then execute:
 
 .. code-block:: shell-session
 
-  # KITCHEN_YAML=.kitchen.multi.yml kitchen converge [7|1604|all]
+  # KITCHEN_YAML=.kitchen.dokken.yml kitchen verify [7|1604|all]
 
 
