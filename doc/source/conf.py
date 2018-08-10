@@ -24,9 +24,10 @@ current_series_name = 'rocky'
 
 # -- Project information -----------------------------------------------------
 
+project = u'Chef OpenStack'
 title = u'Chef OpenStack Documentation'
 category = 'Miscellaneous'
-copyright = u'2014-2018, Chef OpenStack Contributors'
+copyright = u'2012-2018, Chef OpenStack Contributors'
 author = u'Chef OpenStack Contributors'
 
 # -- General configuration ---------------------------------------------------
