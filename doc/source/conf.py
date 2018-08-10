@@ -24,9 +24,10 @@ current_series_name = 'queens'
 
 # -- Project information -----------------------------------------------------
 
+project = u'Chef OpenStack'
 title = u'Chef OpenStack Documentation'
 category = 'Miscellaneous'
-copyright = u'2014-2018, Chef OpenStack Contributors'
+copyright = u'2012-2018, Chef OpenStack Contributors'
 author = u'Chef OpenStack Contributors'
 
 # -- General configuration ---------------------------------------------------
@@ -42,8 +43,7 @@ extensions = [
     'openstackdocstheme',
     'sphinx.ext.autodoc',
     'sphinx.ext.extlinks',
-    'sphinx.ext.viewcode',
-    'sphinxmark'
+    'sphinx.ext.viewcode'
 ]
 
 todo_include_docs = True
