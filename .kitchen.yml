@@ -30,8 +30,12 @@ verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-16.04
-  - name: centos-7.5
+  - name: ubuntu-xenial
+    driver:
+      box: bento/ubuntu-16.04
+  - name: centos-7
+    driver:
+      box: bento/centos-7
 
 suites:
   - name: default
@@ -80,6 +84,9 @@ suites:
       - recipe[openstack-block-storage::volume]
       - recipe[openstack-block-storage::backup]
       - recipe[openstack-block-storage::identity_registration]
+      - recipe[openstack-bare-metal::api]
+      - recipe[openstack-bare-metal::conductor]
+      - recipe[openstack-bare-metal::identity_registration]
       - recipe[openstack-orchestration::engine]
       - recipe[openstack-orchestration::api]
       - recipe[openstack-orchestration::api-cfn]

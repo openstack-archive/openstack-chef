@@ -14,6 +14,7 @@ source 'https://supermarket.chef.io'
   network
   ops-database
   ops-messaging
+  bare-metal
 ).each do |cookbook|
   if Dir.exist?("../cookbook-openstack-#{cookbook}")
     cookbook "openstack-#{cookbook}", path: "../cookbook-openstack-#{cookbook}"
