@@ -18,7 +18,7 @@ The Berksfile in this repo has been enhanced to look for local working cookbook 
 to when running the test suite.  Simply set REPO_DEV=True and create a directory tree as follows:
 
 * base_dev_dir\
-** openstack-chef-repo
+** openstack-chef
 ** cookbook-openstack-***
 
 When doing the 'chef exec rake berks_vendor', the Berks file will pick up cookbooks changes from the

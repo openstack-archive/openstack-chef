@@ -167,8 +167,8 @@ LONGDESC
         end
       end
 
-      run('git clone --depth 1 git@github.com:openstack/openstack-chef-repo.git') unless options[:skip]
-      Dir.chdir('openstack-chef-repo') do
+      run('git clone --depth 1 git@github.com:openstack/openstack-chef.git') unless options[:skip]
+      Dir.chdir('openstack-chef') do
         ENV['ZUUL_CHANGES'] = options[:patches]
         run('chef exec rake berks_vendor') unless options[:skip]
 

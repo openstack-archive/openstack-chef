@@ -18,14 +18,14 @@ source 'https://supermarket.chef.io'
     cookbook "openstack-#{cookbook}", path: "../cookbook-openstack-#{cookbook}"
   else
     cookbook "openstack-#{cookbook}",
-      github: "openstack/cookbook-openstack-#{cookbook}",
+      git: "https://git.openstack.org/openstack/cookbook-openstack-#{cookbook}",
       branch: "stable/ocata"
   end
 
 end
 
 cookbook 'openstackclient',
-  github: 'cloudbau/cookbook-openstackclient',
+  github: 'scassiba/cookbook-openstackclient',
   branch: 'stable/ocata'
 cookbook 'statsd',
   github: 'librato/statsd-cookbook'
