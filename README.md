@@ -1,7 +1,7 @@
 Team and repository tags
 ========================
 
-[![Team and repository tags](http://governance.openstack.org/badges/openstack-chef-repo.svg)](http://governance.openstack.org/reference/tags/index.html)
+[![Team and repository tags](http://governance.openstack.org/badges/openstack-chef.svg)](http://governance.openstack.org/reference/tags/index.html)
 
 <!-- Change things from this point on -->
 
@@ -34,8 +34,8 @@ HA.
 ### Getting the Code (this repo)
 
 ```shell
-$ git clone https://github.com/openstack/openstack-chef-repo.git
-$ cd openstack-chef-repo
+$ git clone https://github.com/openstack/openstack-chef.git
+$ cd openstack-chef
 ```
 
 The OpenStack cookbooks by default use encrypted data bags for configuring

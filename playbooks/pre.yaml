@@ -2,7 +2,7 @@
   roles:
     - bindep
   vars:
-    bindep_file: /home/zuul/src/git.openstack.org/openstack/openstack-chef-repo/bindep.txt
+    bindep_file: /home/zuul/src/git.openstack.org/openstack/openstack-chef/bindep.txt
 
 - hosts: all
   vars:
