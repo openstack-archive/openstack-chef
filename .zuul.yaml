@@ -1,20 +1,50 @@
 - job:
+    name: openstack-chef-rake
+    parent: base
+    description: Run rake tests with openstack-chef
+    required-projects: openstack/openstack-chef
+    pre-run: playbooks/pre.yaml
+    run: playbooks/rake.yaml
+
+- job:
+    name: openstack-chef-integration
+    parent: base
+    description: Run integration tests with openstack-chef
+    required-projects: openstack/openstack-chef
+    pre-run: playbooks/pre.yaml
+    run: playbooks/integration.yaml
+    post-run: playbooks/post.yaml
+    timeout: 3600
+
+- job:
     name: openstack-chef-repo-rake
     parent: base
-    description: Run rake tests with openstack-chef-repo
-    required-projects: openstack/openstack-chef-repo
+    description: Run rake tests with openstack-chef
+    required-projects: openstack/openstack-chef
     pre-run: playbooks/pre.yaml
     run: playbooks/rake.yaml
 
 - job:
     name: openstack-chef-repo-integration
     parent: base
-    description: Run integration tests with openstack-chef-repo
-    required-projects: openstack/openstack-chef-repo
+    description: Run integration tests with openstack-chef
+    required-projects: openstack/openstack-chef
     pre-run: playbooks/pre.yaml
     run: playbooks/integration.yaml
     post-run: playbooks/post.yaml
     timeout: 3600
+
+
+- project-template:
+    name: openstack-chef-jobs
+    check:
+      jobs:
+        - openstack-chef-rake
+        - openstack-chef-integration
+    gate:
+      jobs:
+        - openstack-chef-rake
+        - openstack-chef-integration
 
 - project-template:
     name: openstack-chef-repo-jobs
@@ -29,4 +59,5 @@
 
 - project:
     templates:
+      - openstack-chef-jobs
       - openstack-chef-repo-jobs
