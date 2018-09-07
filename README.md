@@ -80,7 +80,7 @@ $ sudo su -
 ### Multiple nodes (non-HA)
 ```bash
 # Multinode with Neutron (1 controller + 2 compute nodes)
-$ export KITCHEN_YAML=.kitchen.multi.yaml
+$ export KITCHEN_YAML=.kitchen.multi.yml
 $ kitchen converge [centos|ubuntu|all]
 $ kitchen verify [centos|ubuntu|all]
 $ kitchen destroy [centos|ubuntu|all]
