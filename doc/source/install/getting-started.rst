@@ -9,7 +9,8 @@ Learn about Chef OpenStack
   consult the `online documentation <https://docs.chef.io>`_ or
   `Learn Chef <https://learn.chef.io>`_.
 * `Supported Platforms <supported-platforms.html>`_
-* `Deploy <quickstart.html>`_ on your own development OpenStack Cloud with `Test Kitchen <https://kitchen.ci>`_.
+* `Create <quickstart.html>`_ on your own development OpenStack Cloud with `Test Kitchen <https://kitchen.ci>`_.
+* `Deploy <deploy.html>`_ on your own physical or virtual machines.
 * Chef OpenStack `genealogy <genealogy.html>`_.
 
 .. toctree::

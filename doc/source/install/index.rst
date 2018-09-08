@@ -7,5 +7,6 @@ Install Guide
 
    getting-started
    quickstart
+   deploy
    genealogy
    supported-platforms

@@ -31,8 +31,8 @@ For production workloads, multiple nodes for specific roles are recommended.
 
 .. _hardware-assisted virtualization: https://en.wikipedia.org/wiki/Hardware-assisted_virtualization
 
-Building with Test Kitchen
---------------------------
+Testing with Kitchen
+--------------------
 
 There are three basic steps to building OpenStack with Test Kitchen, with an optional first step should you need to customize your build:
 
@@ -64,7 +64,7 @@ Start by cloing the OpenStack chef-repo repository and changing into the root di
 
   # git clone https://git.openstack.org/openstack/openstack-chef \
       /opt/openstack-chef
-  # cd openstack-chef
+  # cd /opt/openstack-chef
 
 Next, switch to the applicable branch/tag to be deployed. Note that deploying
 from the head of a branch may result in an unstable build due to changes in
@@ -93,10 +93,10 @@ use of different services or test new cookbooks.
 To use a different driver for Test Kitchen, such as for a multi-node
 development environment, pass the ``KITCHEN_YAML`` environment variable as an
 additional option to the ``kitchen`` command. For example, if you want to
-deploy a containerized development environment, instead of an AIO, then execute:
+deploy a containerized development environment, instead of a Vagrant AIO, then execute:
 
 .. code-block:: shell-session
 
-  # KITCHEN_YAML=.kitchen.dokken.yml kitchen verify [7|1804|all]
+  # KITCHEN_YAML=.kitchen.dokken.yml kitchen verify [centos|ubuntu|all]
 
 
