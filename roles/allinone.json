@@ -51,6 +51,9 @@
     "recipe[openstack-dns::identity_registration]",
     "recipe[openstack-image::image_upload]",
     "recipe[openstack-dashboard::horizon]",
-    "recipe[openstack-dashboard::neutron-lbaas-dashboard]"
+    "recipe[openstack-dashboard::neutron-lbaas-dashboard]",
+    "recipe[openstack-integration-test::create_network]",
+    "recipe[openstack-integration-test::setup]",
+    "recipe[openstack-integration-test::run_tempest]"
   ]
 }
