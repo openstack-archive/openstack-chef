@@ -48,6 +48,7 @@
     "recipe[openstack-block-storage::identity_registration]",
     "recipe[openstack-dns::api]",
     "recipe[openstack-dns::central]",
+    "recipe[openstack-dns::sink]",
     "recipe[openstack-dns::identity_registration]",
     "recipe[openstack-image::image_upload]",
     "recipe[openstack-dashboard::horizon]",
