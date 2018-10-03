@@ -23,5 +23,10 @@ source 'https://supermarket.chef.io'
   end
 end
 
-cookbook 'openstackclient', git: 'https://git.openstack.org/openstack/cookbook-openstackclient'
+if Dir.exist?('../cookbook-openstackclient')
+  cookbook 'openstackclient', path: '../cookbook-openstackclient'
+else
+  cookbook 'openstackclient', github: 'scassiba/cookbook-openstackclient'
+end
+
 cookbook 'statsd', github: 'librato/statsd-cookbook'
