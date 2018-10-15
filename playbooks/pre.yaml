@@ -16,4 +16,7 @@
   - name: Install chefdk package
     shell: dpkg -i /tmp/{{ chefdk }}
     become: yes
+  - name: Downgrade pip to 18.0 as workaround for https://github.com/poise/poise-python/issues/133
+    shell: pip install pip==18.0
+    become: yes
 
