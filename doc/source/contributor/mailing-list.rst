@@ -1,15 +1,12 @@
 .. _mailing_list:
 
-=============
-Mailing lists
-=============
+============
+Mailing list
+============
 
-The mailing lists are preferred, as it makes the information more readily available so that others who have the same question or issue can search for and find the answers.
+The mailing list is preferred, as it makes the information more readily available so that others who have the same question or issue can search for and find the answers.
 
--  Dev discussions:
-   `openstack-dev@lists.openstack.org <https://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-dev>`__
-   with ``[chef]`` tag.
--  Usage discussions:
-   `openstack-operators@lists.openstack.org <https://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-operators>`__
-   with ``[chef]`` tag.
+All our communications should be prefixed with **[chef]** in the `mailing list`_.
+
+.. _mailing list: http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-discuss
 
