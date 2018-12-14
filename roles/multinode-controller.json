@@ -2,7 +2,6 @@
   "name": "multinode-controller",
   "description": "This will deploy a controller node for a scenarios with just compute and controller nodes",
   "run_list": [
-    "recipe[build-essential]",
     "recipe[openstack-common]",
     "recipe[openstack-common::logging]",
     "recipe[openstack-common::sysctl]",
