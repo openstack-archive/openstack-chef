@@ -2,7 +2,6 @@
   "name": "multinode-compute",
   "description": "This will deploy a compute node for a scenarios with just compute and controller nodes",
   "run_list": [
-    "recipe[build-essential]",
     "recipe[openstack-common]",
     "recipe[openstack-compute::compute]",
     "recipe[openstack-compute::identity_registration]",
