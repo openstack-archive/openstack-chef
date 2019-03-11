@@ -19,7 +19,7 @@ This framework also gives us an opportunity to show different Reference
 Architectures and a sane example on how to start with OpenStack using Chef.
 
 With the `master` branch of the cookbooks, which is currently tied to the base
-OpenStack Ocata release, this supports deploying to Ubuntu 16.04 and CentOS 7
+OpenStack Rocky release, this supports deploying to Ubuntu 18.04 and CentOS 7
 in monolithic, or allinone, and non-HA multinode configurations with Neutron.
 The cookbooks support a fully HA configuration, but we do not test for that as
 there are far numerous paths to HA.

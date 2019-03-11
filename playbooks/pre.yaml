@@ -12,7 +12,7 @@
   - name: Fetch chefdk package
     get_url:
       dest: /tmp/{{ chefdk }}
-      url: https://packages.chef.io/files/stable/chefdk/{{ release }}/ubuntu/16.04/{{ chefdk }}
+      url: https://packages.chef.io/files/stable/chefdk/{{ release }}/ubuntu/18.04/{{ chefdk }}
   - name: Install chefdk package
     shell: dpkg -i /tmp/{{ chefdk }}
     become: yes
