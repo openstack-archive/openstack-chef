@@ -7,9 +7,10 @@
     run: playbooks/rake.yaml
 
 - job:
-    name: openstack-chef-integration
+    name: openstack-chef-integration-xenial
     parent: base
-    description: Run integration tests with openstack-chef
+    nodeset: ubuntu-xenial
+    description: Run integration tests with openstack-chef on Ubuntu Xenial
     required-projects: openstack/openstack-chef
     pre-run: playbooks/pre.yaml
     run: playbooks/integration.yaml
@@ -21,11 +22,11 @@
     check:
       jobs:
         - openstack-chef-rake
-        - openstack-chef-integration
+        - openstack-chef-integration-xenial:
+            voting: false
     gate:
       jobs:
         - openstack-chef-rake
-        - openstack-chef-integration
 
 - project:
     templates:
