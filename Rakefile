@@ -141,6 +141,7 @@ task integration: %i(create_key berks_vendor) do
   # This is a workaround for allowing chef-client to run in local mode
   sh %(sudo mkdir -p /etc/chef && sudo cp .chef/encrypted_data_bag_secret /etc/chef/openstack_data_bag_secret)
   _run_env_queries
+  test_env = ENV['TEST_ENVIRONMENT']
 
   # Three passes to ensure idempotency. prefer each to times, even if it
   # reads weird
@@ -148,7 +149,7 @@ task integration: %i(create_key berks_vendor) do
     begin
       puts "####### Pass #{i}"
       # Kick off chef client in local mode, will converge OpenStack right on the gate job "in place"
-      sh %(sudo chef-client #{client_opts} -E integration -r 'role[minimal]' > #{log_dir}/chef-client-pass#{i}.txt 2>&1 )
+      sh %(sudo chef-client #{client_opts} -E #{test_env} -r 'role[minimal]' > #{log_dir}/chef-client-pass#{i}.txt 2>&1 )
       _run_basic_queries
     rescue => e
       raise "####### Pass #{i} failed with #{e.message}"

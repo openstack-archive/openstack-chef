@@ -23,6 +23,8 @@
     parent: openstack-chef-integration-bionic
     nodeset: ubuntu-xenial
     description: Run integration tests with openstack-chef on Ubuntu Xenial
+    vars:
+      chef_test_env: integration-xenial
 
 - project-template:
     name: openstack-chef-jobs

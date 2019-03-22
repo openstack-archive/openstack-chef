@@ -1,21 +1,11 @@
 {
-  "name": "integration",
-  "description": "Chef environment file for building OpenStack in CI settings. Certain Tempest services are disabled in this scenario",
+  "name": "integration-xenial",
+  "description": "Chef environment file for building OpenStack in CI settings running on Ubuntu Xenial. Certain Tempest services are disabled in this scenario",
   "default_attributes": {
     "apache": {
       "listen": [
 
       ]
-    },
-    "mariadb": {
-      "install": {
-        "version": "10.1"
-      }
-    },
-    "openstack": {
-      "apt": {
-        "live_updates_enabled": false
-      }
     },
     "yum": {
       "epel": {
