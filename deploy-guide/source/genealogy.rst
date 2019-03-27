@@ -26,23 +26,25 @@ Releases Summary
 +----------------------------+------------------------------+------------------------+
 | 13.z.y                     | Mitaka                       | no - EOL (2017-04-10)  |
 +----------------------------+------------------------------+------------------------+
-| 14.z.y                     | Newton                       | yes - EOL (2017-10-11) |
+| 14.z.y                     | Newton                       | no - EOL (2017-10-11)  |
 +----------------------------+------------------------------+------------------------+
-| 15.z.y                     | Ocata                        | yes - EOL (2017-02-26) |
+| 15.z.y                     | Ocata                        | no - Extended Maint.   |
 +----------------------------+------------------------------+------------------------+
 | 16.z.y                     | Pike                         | yes                    |
 +----------------------------+------------------------------+------------------------+
-| 17.z.y                     | Queens                       | yes (current master)   |
+| 17.z.y                     | Queens                       | yes                    |
 +----------------------------+------------------------------+------------------------+
-| 18.z.y                     | Rocky                        | Future                 |
+| 18.z.y                     | Rocky                        | yes (current master)   |
++----------------------------+------------------------------+------------------------+
+| 19.z.y                     | Stein                        | Future                 |
 +----------------------------+------------------------------+------------------------+
 
 Supermarket releases
 ====================
 
-- From Ocata, the cookbooks are released on the Chef Supermarket_.
+- From Ocata on, the cookbooks are released on the Chef Supermarket_.
 
-.. _Supermarket: https://supermarket.chef.io/openstack
+.. _Supermarket: https://supermarket.chef.io/users/openstack
 
 How to release Chef cookbooks
 =============================

@@ -1,4 +1,5 @@
 .DS_Store
+.eggs/
 .kitchen/
 .kitchen.local.yml
 .bundle
@@ -15,5 +16,6 @@ vms/
 .chef/local-mode-cache/
 .project
 .tox
+deploy-guide/build
 doc/build
 *.egg-info
