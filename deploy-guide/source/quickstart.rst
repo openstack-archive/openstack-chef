@@ -58,7 +58,7 @@ packages are updated and then rebooted into the new kernel:
   # yum upgrade
   # reboot
 
-Start by cloing the OpenStack chef-repo repository and changing into the root directory:
+Start by cloning the OpenStack Chef repository and changing into the root directory:
 
 .. code-block:: shell-session
 
@@ -71,23 +71,23 @@ from the head of a branch may result in an unstable build due to changes in
 flight and upstream OpenStack changes. For a test (not a development) build, it
 is usually best to checkout the latest tagged version.
 
-.. parsed-literal::
+.. code-block:: shell-session
 
    ## List all existing branches.
-   # git branch -v
+   # git branch -av
 
-   ## Checkout the stable branch
-   # git checkout master
+   ## Checkout some stable branch
+   # git checkout stable/queens
 
 .. note::
-   The master release is compatible with Ubuntu 18.04
+   The current master release is compatible with Ubuntu 18.04
    (Bionic Beaver) and CentOS 7
 
 By default the cookbooks deploy all OpenStack services with sensible defaults
 for the purpose of a gate check, development or testing system.
 
 Deployers have the option to change how the build is configured by overriding
-in the respective kitche YAML file. This can be useful when you want to make
+in the respective kitchen YAML file. This can be useful when you want to make
 use of different services or test new cookbooks.
 
 To use a different driver for Test Kitchen, such as for a multi-node

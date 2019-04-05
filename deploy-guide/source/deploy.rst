@@ -18,9 +18,9 @@ Tempest.
   * At least 4GB of memory. 8GB or more is recommended.
   * At least 10GB of storage.
 
-.. code-block:: bash
+.. code-block:: shell-session
 
-  $ git clone https://git.openstack.org/openstack/openstack-chef
-  $ cd openstack-chef
+  # git clone https://git.openstack.org/openstack/openstack-chef
+  # cd openstack-chef
   # mkdir -p /etc/chef && cp .chef/encrypted_data_bag_secret /etc/chef/openstack_data_bag_secret
   # chef-client -z -E allinone -r 'role[allinone]'

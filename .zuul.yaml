@@ -30,5 +30,6 @@
 
 - project:
     templates:
+      - deploy-guide-jobs
       - publish-openstack-docs-pti
       - openstack-chef-jobs
