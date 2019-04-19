@@ -3,6 +3,6 @@
     - name: run integration
       shell:
         cmd: chef exec rake integration
-        chdir: '{{ ansible_user_dir }}/src/git.openstack.org/openstack/openstack-chef'
+        chdir: '{{ ansible_user_dir }}/src/opendev.org/openstack/openstack-chef'
       environment:
         WORKSPACE: '{{ ansible_user_dir }}'
