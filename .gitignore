@@ -16,6 +16,8 @@ vms/
 .chef/local-mode-cache/
 .project
 .tox
+.idea/*
+.venv/
 deploy-guide/build
 doc/build
 *.egg-info
