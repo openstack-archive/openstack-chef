@@ -7,8 +7,8 @@ desc 'Default gate tests to run'
 task test: %i(rubocop berks_vendor json_check)
 
 def run_command(command)
-  if File.exist?('Gemfile.lock')
-    sh %(bundle exec #{command})
+  if File.exist?('/opt/chef/bin/chef-client')
+    sh %(PATH=/opt/chef/embedded/bin:$PATH #{command})
   else
     sh %(chef exec #{command})
   end
