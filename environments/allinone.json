@@ -7,9 +7,12 @@
 
       ]
     },
-    "yum": {
-      "epel": {
-        "enabled": false
+    "mariadb": {
+      "install": {
+        "version": "10.1"
+      },
+      "apt_repository": {
+        "base_url": "ftp.osuosl.org/pub/mariadb/repo"
       }
     }
   },
@@ -29,6 +32,9 @@
       "dashboard": {
         "server_hostname": "localhost"
       },
+      "memcached_servers": [
+        "127.0.0.1:11211"
+      ],
       "mq": {
         "user": "admin"
       },

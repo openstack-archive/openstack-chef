@@ -5,23 +5,37 @@
       "listen": [
 
       ]
-    },
-    "yum": {
-      "epel": {
-        "enabled": false
+		},
+    "mariadb": {
+      "install": {
+        "version": "10.1"
+      },
+      "apt_repository": {
+        "base_url": "ftp.osuosl.org/pub/mariadb/repo"
       }
     }
   },
   "override_attributes": {
     "openstack": {
+      "is_release": true,
       "apt": {
-        "unattended_upgrades": {
-          "enable": false
-        },
         "update_apt_cache": true
       },
-      "sysctl": {
-        "net.ipv4.ip_forward": 1
+      "telemetry": {
+        "conf": {
+          "DEFAULT": {
+            "meter_dispatchers": "database"
+          }
+        }
+      },
+      "integration-test": {
+        "conf": {
+          "service_available": {
+            "ceilometer": false,
+            "heat": false,
+            "horizon": false
+          }
+        }
       },
       "endpoints": {
         "db": {
@@ -30,42 +44,10 @@
         "mq": {
           "host": "192.168.101.60"
         },
-        "admin": {
-          "identity": {
-            "host": "192.168.101.60"
-          },
-          "network": {
-            "host": "192.168.101.60"
-          },
-          "image_api": {
-            "host": "192.168.101.60"
-          },
-          "image_registry": {
-            "host": "192.168.101.60"
-          },
-          "block-storage": {
-            "host": "192.168.101.60"
-          },
-          "compute-api": {
-            "host": "192.168.101.60"
-          },
-          "compute-metadata-api": {
-            "host": "192.168.101.60"
-          },
-          "compute-novnc": {
-            "host": "192.168.101.60"
-          },
-          "orchestration-api": {
-            "host": "192.168.101.60"
-          },
-          "orchestration-api-cfn": {
-            "host": "192.168.101.60"
-          },
-          "placement-api": {
-            "host": "192.168.101.60"
-          }
-        },
         "internal": {
+          "bare_metal": {
+            "host": "192.168.101.60"
+          },
           "identity": {
             "host": "192.168.101.60"
           },
@@ -101,6 +83,9 @@
           }
         },
         "public": {
+          "bare_metal": {
+            "host": "192.168.101.60"
+          },
           "identity": {
             "host": "192.168.101.60"
           },
@@ -143,17 +128,20 @@
         "mq": {
           "host": "192.168.101.60"
         },
-        "main": {
+        "public": {
           "identity": {
             "host": "0.0.0.0"
           }
         },
-        "admin": {
+        "internal": {
           "identity": {
             "host": "0.0.0.0"
           }
         },
         "all": {
+          "bare_metal": {
+            "host": "0.0.0.0"
+          },
           "network": {
             "host": "0.0.0.0"
           },
@@ -187,32 +175,21 @@
         }
       },
       "dashboard": {
-        "server_hostname": "localhost"
+        "server_hostname": "controller.example.net"
       },
+      "memcached_servers": [
+        "192.168.101.60:11211"
+      ],
       "mq": {
         "user": "admin"
       },
       "network": {
-        "plugins": {
-          "ml2_openvswitch": {
-            "conf": {
-              "ml2_type_vxlan": {
-                "vni_ranges": "65537:69999",
-                "vxlan_group": "239.1.1.40"
-              }
-            }
-          }
-        },
-        "tun_network_bridge_interface": "enp0s8",
         "conf": {
           "DEFAULT": {
             "service_plugins": "router"
           },
           "transport_url": {
             "rabbit_host": "192.168.101.60"
-          },
-          "ml2": {
-            "tenant_network_types": "vxlan"
           }
         }
       },

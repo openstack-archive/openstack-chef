@@ -29,4 +29,5 @@ else
   cookbook 'openstackclient', git: 'https://git.openstack.org/openstack/cookbook-openstackclient'
 end
 
+cookbook 'openstack_test', path: 'test/cookbooks/openstack_test'
 cookbook 'statsd', github: 'librato/statsd-cookbook'

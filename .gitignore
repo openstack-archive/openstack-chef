@@ -7,7 +7,7 @@
 berks-cookbooks/
 Berksfile.lock
 clients/
-cookbooks/
+./cookbooks/
 Gemfile.lock
 nodes/
 vms/
