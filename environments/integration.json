@@ -11,11 +11,6 @@
       "install": {
         "version": "10.1"
       }
-    },
-    "yum": {
-      "epel": {
-        "enabled": false
-      }
     }
   },
   "override_attributes": {

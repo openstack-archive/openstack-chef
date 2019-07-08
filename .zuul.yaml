@@ -8,9 +8,21 @@
     timeout: 1800
 
 - job:
-    name: openstack-chef-integration
+    name: openstack-chef-integration-ubuntu
     parent: base
+    nodeset: ubuntu-bionic
     description: Run integration tests with openstack-chef on Ubuntu Bionic
+    required-projects: openstack/openstack-chef
+    pre-run: playbooks/pre-integration.yaml
+    run: playbooks/integration.yaml
+    post-run: playbooks/post.yaml
+    timeout: 5400
+
+- job:
+    name: openstack-chef-integration-centos
+    parent: base
+    nodeset: centos-7
+    description: Run integration tests with openstack-chef on CentOS 7
     required-projects: openstack/openstack-chef
     pre-run: playbooks/pre-integration.yaml
     run: playbooks/integration.yaml
@@ -22,11 +34,13 @@
     check:
       jobs:
         - openstack-chef-delivery
-        - openstack-chef-integration
+        - openstack-chef-integration-ubuntu
+        - openstack-chef-integration-centos
     gate:
       jobs:
         - openstack-chef-delivery
-        - openstack-chef-integration
+        - openstack-chef-integration-ubuntu
+        - openstack-chef-integration-centos
 
 - project:
     templates:
