@@ -51,6 +51,18 @@
     post-run: playbooks/post.yaml
     timeout: 5400
 
+- job:
+    name: openstack-cinc-integration-ubuntu
+    parent: openstack-chef-integration-ubuntu
+    vars:
+      openstack_chef_client_type: cinc
+
+- job:
+    name: openstack-cinc-integration-centos
+    parent: openstack-chef-integration-centos
+    vars:
+      openstack_chef_client_type: cinc
+
 - project-template:
     name: openstack-chef-repo-jobs
     check:
@@ -58,12 +70,16 @@
         - openstack-chef-delivery
         - openstack-chef-integration-ubuntu
         - openstack-chef-integration-centos
+        - openstack-cinc-integration-ubuntu
+        - openstack-cinc-integration-centos
     gate:
       queue: openstack-chef
       jobs:
         - openstack-chef-delivery
         - openstack-chef-integration-ubuntu
         - openstack-chef-integration-centos
+        - openstack-cinc-integration-ubuntu
+        - openstack-cinc-integration-centos
 
 - project-template:
     name: openstack-chef-jobs
@@ -72,6 +88,8 @@
         - openstack-chef-delivery
         - openstack-chef-integration-ubuntu
         - openstack-chef-integration-centos
+        - openstack-cinc-integration-ubuntu
+        - openstack-cinc-integration-centos
         - openstack-chef-minimal-integration-ubuntu
         - openstack-chef-minimal-integration-centos
     gate:
@@ -80,6 +98,8 @@
         - openstack-chef-delivery
         - openstack-chef-integration-ubuntu
         - openstack-chef-integration-centos
+        - openstack-cinc-integration-ubuntu
+        - openstack-cinc-integration-centos
         - openstack-chef-minimal-integration-ubuntu
         - openstack-chef-minimal-integration-centos
 
