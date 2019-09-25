@@ -1,20 +1,6 @@
 Scripts
 =======
 
-install.sh
-==========
-
-`Chef Omnitruck installation script`_ which is used directly by Zuul to
-install Chef for the openstack-chef-integration job.
-
-.. _Chef Omnitruck installation script: https://docs.chef.io/install_omnibus.html
-
-To update, do the following:
-
-.. code-block:: console
-
-  $ wget https://omnitruck.chef.io/install.sh
-
 json_check.sh
 =============
 
