@@ -14,7 +14,6 @@
     "recipe[openstack-identity::registration]",
     "recipe[openstack-identity::openrc]",
     "recipe[openstack-image::api]",
-    "recipe[openstack-image::registry]",
     "recipe[openstack-image::identity_registration]",
     "recipe[openstack-network]",
     "recipe[openstack-network::openvswitch]",

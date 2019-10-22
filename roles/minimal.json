@@ -13,7 +13,6 @@
     "recipe[openstack-identity::registration]",
     "recipe[openstack-identity::openrc]",
     "recipe[openstack-image::api]",
-    "recipe[openstack-image::registry]",
     "recipe[openstack-image::identity_registration]",
     "recipe[openstack-network::identity_registration]",
     "recipe[openstack-network::ml2_core_plugin]",
