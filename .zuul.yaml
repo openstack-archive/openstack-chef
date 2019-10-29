@@ -37,6 +37,7 @@
         - openstack-chef-integration-ubuntu
         - openstack-chef-integration-centos
     gate:
+      queue: openstack-chef
       jobs:
         - openstack-chef-delivery
         - openstack-chef-integration-ubuntu
