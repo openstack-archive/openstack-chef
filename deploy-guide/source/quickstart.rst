@@ -62,7 +62,7 @@ Start by cloning the OpenStack Chef repository and changing into the root direct
 
 .. code-block:: shell-session
 
-  # git clone https://git.openstack.org/openstack/openstack-chef \
+  # git clone https://opendev.org/openstack/openstack-chef \
       /opt/openstack-chef
   # cd /opt/openstack-chef
 

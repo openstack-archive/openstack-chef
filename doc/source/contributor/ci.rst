@@ -6,7 +6,7 @@ Continuous Integration
 
 This is a list of the CI jobs that are running against most of the Chef
 OpenStack cookbooks. The code that configures Zuul jobs is hosted in
-`openstack-chef <https://git.openstack.org/cgit/openstack/openstack-chef/tree/playbooks/>`_.
+`openstack-chef <https://opendev.org/cgit/openstack/openstack-chef/tree/playbooks/>`_.
 
 .. list-table:: **CI Jobs in Chef OpenStack**
    :widths: 31 25 8 55
