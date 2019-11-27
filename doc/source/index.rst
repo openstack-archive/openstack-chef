@@ -1,4 +1,4 @@
-Chef OpenStack Documentation
+OpenStack Chef Documentation
 ============================
 
 The Chef cookbooks for OpenStack automate the building, operation and
@@ -13,11 +13,5 @@ Contributor Guide
 
    contributor/index
 
-Install Guide
--------------
-
-.. toctree::
-   :maxdepth: 2
-   :includehidden:
-
-   install/index
+The latest deployment guide can be found
+`here <https://docs.openstack.org/project-deploy-guide/openstack-chef/latest/>`_.
