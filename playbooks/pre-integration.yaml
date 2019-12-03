@@ -8,12 +8,12 @@
   tasks:
   - name: Install chef package
     shell:
-      cmd: ./scripts/install.sh -v 14
+      cmd: ./scripts/install.sh -v 15
       chdir: /home/zuul/src/opendev.org/openstack/openstack-chef/
     become: yes
   - name: Install berkshelf
-    shell: /opt/chef/embedded/bin/gem install --no-rdoc --no-ri berkshelf
+    shell: /opt/chef/embedded/bin/gem install -N berkshelf
     become: yes
   - name: Install cookstyle
-    shell: /opt/chef/embedded/bin/gem install --no-rdoc --no-ri cookstyle
+    shell: /opt/chef/embedded/bin/gem install -N cookstyle
     become: yes
