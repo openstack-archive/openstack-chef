@@ -46,5 +46,21 @@
 - project:
     templates:
       - deploy-guide-jobs
-      - publish-openstack-docs-pti
       - openstack-chef-jobs
+    check:
+      jobs:
+        - openstack-tox-docs:
+            nodeset: ubuntu-bionic
+            required-projects:
+              - name: openstack/requirements
+                override-checkout: stable/stein
+    gate:
+      jobs:
+        - openstack-tox-docs:
+            nodeset: ubuntu-bionic
+            required-projects:
+              - name: openstack/requirements
+                override-checkout: stable/stein
+    promote:
+      jobs:
+        - promote-openstack-tox-docs

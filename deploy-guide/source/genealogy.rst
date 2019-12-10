@@ -18,25 +18,25 @@ Releases Summary
 +----------------------------+------------------------------+------------------------+
 | 9.y.z                      | Icehouse                     | no - EOL (2015-07-02)  |
 +----------------------------+------------------------------+------------------------+
-| 10.z.y                     | Juno                         | no - EOL (2015-12-07)  |
+| 10.y.z                     | Juno                         | no - EOL (2015-12-07)  |
 +----------------------------+------------------------------+------------------------+
-| 11.z.y                     | Kilo                         | no - EOL (2016-05-02)  |
+| 11.y.z                     | Kilo                         | no - EOL (2016-05-02)  |
 +----------------------------+------------------------------+------------------------+
-| 12.z.y                     | Liberty                      | no - EOL (2016-11-17)  |
+| 12.y.z                     | Liberty                      | no - EOL (2016-11-17)  |
 +----------------------------+------------------------------+------------------------+
-| 13.z.y                     | Mitaka                       | no - EOL (2017-04-10)  |
+| 13.y.z                     | Mitaka                       | no - EOL (2017-04-10)  |
 +----------------------------+------------------------------+------------------------+
-| 14.z.y                     | Newton                       | no - EOL (2017-10-11)  |
+| 14.y.z                     | Newton                       | no - EOL (2017-10-11)  |
 +----------------------------+------------------------------+------------------------+
-| 15.z.y                     | Ocata                        | no - Extended Maint.   |
+| 15.y.z                     | Ocata                        | no - EOL (2019-12-12)  |
 +----------------------------+------------------------------+------------------------+
-| 16.z.y                     | Pike                         | yes                    |
+| 16.y.z                     | Pike                         | no - EOL (2019-12-12)  |
 +----------------------------+------------------------------+------------------------+
-| 17.z.y                     | Queens                       | yes                    |
+| 17.y.z                     | Queens                       | yes                    |
 +----------------------------+------------------------------+------------------------+
-| 18.z.y                     | Rocky                        | yes (current master)   |
+| 18.y.z                     | Rocky                        | yes                    |
 +----------------------------+------------------------------+------------------------+
-| 19.z.y                     | Stein                        | Future                 |
+| 19.y.z                     | Stein                        | yes (current master)   |
 +----------------------------+------------------------------+------------------------+
 
 Supermarket releases
@@ -51,8 +51,8 @@ How to release Chef cookbooks
 
 - A core member will create the new branch based on the desired SHA.
   Example: https://review.openstack.org/#/admin/projects/openstack/cookbook-openstack-compute,branches
-- For all cookbooks to be released: update .gitreview, Berksfile,
-  and bootstrap.sh to stable/<release>
+- For all cookbooks to be released: update .gitreview and Berksfile
+  to stable/<release>
   Example: https://review.openstack.org/547505
 - Create a review with the above and propose it against the stable/<release> branch.
 - Solicit for reviews and approval.
