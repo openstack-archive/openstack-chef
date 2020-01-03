@@ -17,7 +17,7 @@ Architectures and a sane example on how to start with OpenStack using
 Chef.
 
 With the ``master`` branch of the cookbooks, which is currently tied to
-the base OpenStack Rocky release, this supports deploying to Ubuntu
+the base OpenStack Stein release, this supports deploying to Ubuntu
 18.04 and CentOS 7 in monolithic, or allinone, and non-HA multinode
 configurations with Neutron. The cookbooks support a fully HA
 configuration, but we do not test for that as there are far numerous
@@ -30,10 +30,10 @@ Prerequisites
 -------------
 
 - Chef 15 or higher
-- `ChefDK`_ 3.2.30 or later
+- `Chef Workstation`_ 0.15.18 or later
 - `Vagrant`_ 2.0 or later with `VirtualBox>`_ or some other provider
 
-.. _ChefDK: https://downloads.chef.io/chef-dk/
+.. _Chef Workstation: https://downloads.chef.io/chef-workstation/
 .. _Vagrant: https://www.vagrantup.com/downloads.html
 .. _VirtualBox: https://www.virtualbox.org/wiki/Downloads
 
@@ -79,8 +79,8 @@ proof of concept deployments.
 Kitchen Test Scenarios
 ----------------------
 
-Initialize the ChefDK
-~~~~~~~~~~~~~~~~~~~~~
+Initialize Chef Workstation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: console
 
@@ -204,7 +204,7 @@ Verifying OpenStack With Tempest
 If you log in to the ``controller`` machine you can test via the most
 recent `Tempest`_ release.
 
-.. _Tempest: https://github.com/openstack/tempest
+.. _Tempest: https://opendev.org/openstack/tempest
 
 .. code-block:: console
 

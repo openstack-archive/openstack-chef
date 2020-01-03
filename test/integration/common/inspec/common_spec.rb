@@ -10,10 +10,11 @@ os_family = os.family
 
 describe command 'openstack --version' do
   its('exit_status') { should eq 0 }
+  # RHEL sends output to stderr while Ubuntu sends it to stdout
   if os_family == 'redhat'
-    its('stderr') { should match /^openstack 3.16.[0-9]+$/ }
+    its('stderr') { should match /^openstack 3.18.[0-9]+$/ }
   else
-    its('stdout') { should match /^openstack 3.16.[0-9]+$/ }
+    its('stdout') { should match /^openstack 3.18.[0-9]+$/ }
   end
 end
 
@@ -33,12 +34,12 @@ if os.family == 'redhat'
     end
   end
 
-  describe yum.repo('RDO-rocky') do
+  describe yum.repo('RDO-stein') do
     it { should exist }
     it { should be_enabled }
   end
 
-  describe yum.repo('RDO-rocky-deps') do
+  describe yum.repo('RDO-stein-deps') do
     it { should_not exist }
     it { should_not be_enabled }
   end
@@ -60,7 +61,7 @@ else
 
   # apt InSpec resource is not working properly
   describe file '/etc/apt/sources.list.d/openstack-ppa.list' do
-    its('content') { should include 'http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/rocky main' }
+    its('content') { should include 'http://ubuntu-cloud.archive.canonical.com/ubuntu bionic-updates/stein main' }
   end
 
   describe file '/etc/apt/sources.list.d/openstack-ppa-proposed.list' do

@@ -3,5 +3,7 @@
   "description": "common cookbook tests",
   "override_attributes": {},
   "run_list": [
+    "openstack-common::etcd",
+    "openstack-common::completions"
   ]
 }

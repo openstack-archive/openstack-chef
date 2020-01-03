@@ -2,7 +2,7 @@ openrc = 'bash -c "source /root/openrc && '
 
 %w(
   9696
-  6633
+  6640
 ).each do |p|
   describe port p do
     it { should be_listening }
@@ -65,6 +65,7 @@ describe command "#{openrc} openstack extension list --network -f value -c Alias
   %w(
     address-scope
     agent
+    agent-resources-synced
     allowed-address-pairs
     auto-allocated-topology
     availability_zone
@@ -79,13 +80,14 @@ describe command "#{openrc} openstack extension list --network -f value -c Alias
     ext-gw-mode
     extra_dhcp_opt
     extraroute
-    filter-validation
     fip-port-details
     flavors
+    floatingip-pools
     ip-substring-filtering
     l3_agent_scheduler
     l3-flavors
     l3-ha
+    l3-port-ip-change-not-allowed
     multi-provider
     net-mtu
     net-mtu-writable
@@ -99,6 +101,7 @@ describe command "#{openrc} openstack extension list --network -f value -c Alias
     quota_details
     quotas
     rbac-policies
+    rbac-security-groups
     revision-if-match
     router
     router_availability_zone
@@ -110,6 +113,7 @@ describe command "#{openrc} openstack extension list --network -f value -c Alias
     standard-attr-tag
     standard-attr-timestamp
     subnet_allocation
+    subnet_onboard
     subnet-service-types
   ).each do |ext|
     its('stdout') { should match /^#{ext}$/ }

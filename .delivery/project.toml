@@ -1,5 +1,5 @@
 [local_phases]
-unit = 'berks vendor cookbooks'
+unit = 'berks vendor -e integration cookbooks'
 lint = 'cookstyle --display-cop-names --extra-details'
 syntax = "./scripts/json_check.sh"
 provision = "echo skipping"

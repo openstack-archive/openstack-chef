@@ -7,6 +7,15 @@
 
       ]
     },
+    "openstack": {
+      "network": {
+        "conf": {
+          "DEFAULT": {
+            "service_plugins": "router"
+          }
+        }
+      }
+    },
     "yum": {
       "epel": {
         "baseurl": "http://epel.osuosl.org/7/$basearch",
@@ -36,13 +45,6 @@
       ],
       "mq": {
         "user": "admin"
-      },
-      "network": {
-        "conf": {
-          "DEFAULT": {
-            "service_plugins": "router"
-          }
-        }
       },
       "image": {
         "image_upload": true

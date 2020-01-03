@@ -6,16 +6,19 @@
 
 - hosts: all
   vars:
-    release: 3.2.30
-    chefdk: chefdk_{{ release }}-1_amd64.deb
+    release: 0.15.18
+    chef_workstation: chef-workstation_{{ release }}-1_amd64.deb
   tasks:
-  - name: Fetch chefdk package
+  - name: Fetch chef-workstation package
     get_url:
-      dest: /tmp/{{ chefdk }}
-      url: https://packages.chef.io/files/stable/chefdk/{{ release }}/ubuntu/18.04/{{ chefdk }}
-  - name: Install chefdk package
-    shell: dpkg -i /tmp/{{ chefdk }}
+      dest: /tmp/{{ chef_workstation }}
+      url: https://packages.chef.io/files/stable/chef-workstation/{{ release }}/ubuntu/18.04/{{ chef_workstation }}
+  - name: Install chef-workstation package
+    shell: dpkg -i /tmp/{{ chef_workstation }}
+    become: yes
+  - name: Show chef environment, accept chef license as side effect
+    shell: chef env --chef-license accept
     become: yes
   - name: Install newer fog-openstack gem
-    shell: chef gem install fog-openstack --version '~> 1.0.0' --no-user-install --no-ri --no-rdoc
+    shell: chef gem install fog-openstack --version '~> 1.0.0' --no-user-install -N
     become: yes

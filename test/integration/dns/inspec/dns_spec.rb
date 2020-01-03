@@ -36,7 +36,7 @@ end
 
 describe command "#{openrc} designate-manage database version\"" do
   its('exit_status') { should eq 0 }
-  its('stdout') { should match /^Current: 100 Latest: 100$/ }
+  its('stdout') { should match /^Current: 102 Latest: 102$/ }
 end
 
 describe command "#{openrc} openstack dns service list -f value -c service_name -c status\"" do

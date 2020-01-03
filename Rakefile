@@ -165,14 +165,12 @@ task integration: %i(create_key berks_vendor) do
       'minimal'
     when 'cookbook_openstackclient'
       'openstackclient'
+    when 'integration_test'
+      'integration'
     else
       project_name
     end
   if ENV['CHEF_MINIMAL'] == 'yes'
-    if project_name == 'minimal'
-      puts 'Project is openstack-chef, no need to run this job twice so exiting...'
-      exit
-    end
     # If CHEF_MINIMAL is set, then let's assume we're running the full minimal suite
     project_name = 'minimal'
   end

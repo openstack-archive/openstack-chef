@@ -19,8 +19,8 @@ import openstackdocstheme
 # -- Chef OpenStack configuration --------------------------------------------
 target_name = 'openstack-chef'
 description = 'Chef OpenStack uses Chef to deploy OpenStack environments.'
-previous_series_name = 'queens'
-current_series_name = 'rocky'
+previous_series_name = 'rocky'
+current_series_name = 'stein'
 
 # -- Project information -----------------------------------------------------
 

@@ -40,12 +40,12 @@ openrc = 'bash -c "source /root/openrc && '
 
 describe command "#{openrc} nova-manage version\"" do
   its('exit_status') { should eq 0 }
-  its('stdout') { should match /^18.[0-9]+/ }
+  its('stdout') { should match /^19.[0-9]+/ }
 end
 
 describe command "#{openrc} nova-manage db version\"" do
   its('exit_status') { should eq 0 }
-  its('stdout') { should match /^390$/ }
+  its('stdout') { should match /^391$/ }
 end
 
 describe command "#{openrc} openstack user list -f value -c Name\"" do
