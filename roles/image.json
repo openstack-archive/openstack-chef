@@ -1,0 +1,10 @@
+{
+  "name": "image",
+  "description": "Deploy image services",
+  "run_list": [
+    "role[identity]",
+    "recipe[openstack-image::api]",
+    "recipe[openstack-image::identity_registration]",
+    "recipe[openstack-image::image_upload]"
+  ]
+}

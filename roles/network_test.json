@@ -1,0 +1,23 @@
+{
+  "name": "network_test",
+  "description": "Network cookbook tests",
+  "override_attributes": {
+    "openstack": {
+      "integration-test": {
+        "conf": {
+          "service_available": {
+            "ceilometer": false,
+            "glance": false,
+            "heat": false,
+            "horizon": false,
+            "nova": false,
+            "neutron": true
+          }
+        }
+      }
+    }
+  },
+  "run_list": [
+    "role[integration_test]"
+  ]
+}

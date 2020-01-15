@@ -1,0 +1,20 @@
+{
+  "name": "network",
+  "description": "Deploy network services",
+  "run_list": [
+    "role[identity]",
+    "recipe[openstack-network::identity_registration]",
+    "recipe[openstack-network::ml2_core_plugin]",
+    "recipe[openstack-network::ml2_openvswitch]",
+    "recipe[openstack-network]",
+    "recipe[openstack-network::openvswitch]",
+    "recipe[openstack-network::_bridge_config_example]",
+    "recipe[openstack-network::plugin_config]",
+    "recipe[openstack-network::server]",
+    "recipe[openstack-network::l3_agent]",
+    "recipe[openstack-network::dhcp_agent]",
+    "recipe[openstack-network::metadata_agent]",
+    "recipe[openstack-network::openvswitch_agent]",
+    "recipe[openstack-integration-test::create_network]"
+  ]
+}

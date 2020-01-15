@@ -14,6 +14,13 @@
       "apt_repository": {
         "base_url": "ftp.osuosl.org/pub/mariadb/repo"
       }
+    },
+    "yum": {
+      "epel": {
+        "baseurl": "http://epel.osuosl.org/7/$basearch",
+        "mirrorlist": null,
+        "gpgkey": "http://epel.osuosl.org/RPM-GPG-KEY-EPEL-7"
+      }
     }
   },
   "override_attributes": {
@@ -26,15 +33,6 @@
         "conf": {
           "DEFAULT": {
             "meter_dispatchers": "database"
-          }
-        }
-      },
-      "integration-test": {
-        "conf": {
-          "service_available": {
-            "ceilometer": false,
-            "heat": false,
-            "horizon": false
           }
         }
       },

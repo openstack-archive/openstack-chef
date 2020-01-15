@@ -1,0 +1,5 @@
+{
+  "name": "dashboard_test",
+  "description": "Dashboard cookbook tests",
+  "run_list": []
+}

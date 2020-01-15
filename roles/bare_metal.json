@@ -1,0 +1,12 @@
+{
+  "name": "bare_metal",
+  "description": "Deploy bare metal services",
+  "run_list": [
+    "role[identity]",
+    "role[image]",
+    "role[network]",
+    "recipe[openstack-bare-metal::api]",
+    "recipe[openstack-bare-metal::conductor]",
+    "recipe[openstack-bare-metal::identity_registration]"
+  ]
+}

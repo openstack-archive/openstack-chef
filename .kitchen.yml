@@ -1,5 +1,5 @@
 <%
-public_ip = "10.0.0.81"
+public_ip = "10.10.0.81"
 %>
 ---
 driver:
@@ -7,10 +7,9 @@ driver:
   customize:
     cpus: 4
     memory: 8192
-
-client_rb:
-  treat_deprecation_warnings_as_errors: true
-  resource_cloning: false
+  network:
+  - ["forwarded_port", {guest: 443, host: 9443}]
+  - ["private_network", {ip: <%= public_ip %>}]
 
 provisioner:
   name: chef_zero
@@ -20,7 +19,7 @@ provisioner:
   #   always_update_cookbooks: <%= !ENV['CI'] %>
   always_update_cookbooks: true
   product_name: chef
-  product_version: 14
+  product_version: 15
   # Copy secret to /tmp/kitchen on test VM. Kitchen tries to gather secrets
   # before any recipes had a chance to run -> we cannot use a recipe to put the
   # secrets file in place.
@@ -31,6 +30,11 @@ provisioner:
     openstack:
       secret:
         key_path: /tmp/kitchen/encrypted_data_bag_secret
+  client_rb:
+    environment: integration
+    treat_deprecation_warnings_as_errors: true
+    resource_cloning: false
+    chef_license: accept
 
 verifier:
   name: inspec
@@ -48,25 +52,78 @@ suites:
     run_list:
       - recipe[openstack_test]
       - role[allinone]
-    driver_config:
-      network:
-      - ["private_network", {ip: <%= public_ip %>}]
+      - role[minimal_test]
     provisioner:
       client_rb:
         environment: allinone
-    verifier:
-      inspec_tests:
-        - test/tempest/default
   - name: minimal
     run_list:
       - recipe[openstack_test]
       - role[minimal]
-    driver_config:
-      network:
-      - ["private_network", {ip: <%= public_ip %>}]
-    provisioner:
-      client_rb:
-        environment: integration
-    verifier:
-      inspec_tests:
-        - test/tempest/default
+      - role[minimal_test]
+  - name: common
+    run_list:
+      - recipe[openstack_test]
+      - role[common]
+  - name: openstackclient
+    run_list:
+      - recipe[openstack_test]
+      - role[openstackclient]
+  - name: ops-database
+    run_list:
+      - recipe[openstack_test]
+      - role[ops_database]
+  - name: ops-messaging
+    run_list:
+      - recipe[openstack_test]
+      - role[ops_messaging]
+  - name: identity
+    run_list:
+      - recipe[openstack_test]
+      - role[identity]
+      - role[identity_test]
+  - name: image
+    run_list:
+      - recipe[openstack_test]
+      - role[image]
+      - role[image_test]
+  - name: network
+    run_list:
+      - recipe[openstack_test]
+      - role[network]
+      - role[network_test]
+  - name: compute
+    run_list:
+      - recipe[openstack_test]
+      - role[compute]
+      - role[compute_test]
+  - name: orchestration
+    run_list:
+      - recipe[openstack_test]
+      - role[orchestration]
+      - role[orchestration_test]
+  - name: block-storage
+    run_list:
+      - recipe[openstack_test]
+      - role[block_storage]
+      - role[block_storage_test]
+  - name: bare-metal
+    run_list:
+      - recipe[openstack_test]
+      - role[bare_metal]
+      - role[bare_metal_test]
+  - name: telemetry
+    run_list:
+      - recipe[openstack_test]
+      - role[telemetry]
+      - role[telemetry_test]
+  - name: dns
+    run_list:
+      - recipe[openstack_test]
+      - role[dns]
+      - role[dns_test]
+  - name: dashboard
+    run_list:
+      - recipe[openstack_test]
+      - role[dashboard]
+      - role[dashboard_test]

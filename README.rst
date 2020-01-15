@@ -29,7 +29,7 @@ paths to HA.
 Prerequisites
 -------------
 
-- Chef 14 or higher
+- Chef 15 or higher
 - `ChefDK`_ 3.2.30 or later
 - `Vagrant`_ 2.0 or later with `VirtualBox>`_ or some other provider
 
@@ -64,9 +64,17 @@ Kitchen Deploy Commands
 
 These commands will produce various OpenStack cluster configurations,
 the simplest being a monolithic Compute Controller with Neutron
-(allinone). These deployments are not intended to be production-ready,
-and will need adaptation to your environment. This is intended for
-development and proof of concept deployments.
+(allinone) which contains all supported cookbooks being deployed.
+
+Due to memory constraints with our CI environment, we also have the
+minimal suite which only tests keystone, glance, neutron, cinder and
+nova. Running this suite should duplicate what we do in our CI pipeline.
+We also have individual suites for each cookbook if you are just working
+on a single cookbook and don't require the allinone suite.
+
+These deployments are not intended to be production-ready, and will need
+adaptation to your environment. This is intended for development and
+proof of concept deployments.
 
 Kitchen Test Scenarios
 ----------------------
@@ -83,8 +91,8 @@ Everything self-contained (allinone)
 
 .. code-block:: console
 
-  # allinone with Neutron
-  $ kitchen test [centos|ubuntu]
+  # allinone with all supported cookbooks
+  $ kitchen test "default-(centos|ubuntu)"
 
 Access the machine
 ~~~~~~~~~~~~~~~~~~

@@ -1,0 +1,14 @@
+{
+  "name": "block_storage",
+  "description": "Deploy block_storage services",
+  "run_list": [
+    "role[identity]",
+    "role[image]",
+    "recipe[openstack-block-storage::api]",
+    "recipe[openstack-block-storage::volume_driver_lvm]",
+    "recipe[openstack-block-storage::volume]",
+    "recipe[openstack-block-storage::scheduler]",
+    "recipe[openstack-block-storage::backup]",
+    "recipe[openstack-block-storage::identity_registration]"
+  ]
+}

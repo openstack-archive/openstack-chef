@@ -1,0 +1,23 @@
+{
+  "name": "compute_test",
+  "description": "compute cookbook tests",
+  "override_attributes": {
+    "openstack": {
+      "integration-test": {
+        "conf": {
+          "service_available": {
+            "ceilometer": false,
+            "glance": true,
+            "heat": false,
+            "horizon": false,
+            "nova": true,
+            "neutron": true
+          }
+        }
+      }
+    }
+  },
+  "run_list": [
+    "role[integration_test]"
+  ]
+}

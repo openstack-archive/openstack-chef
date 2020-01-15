@@ -1,0 +1,18 @@
+{
+  "name": "image",
+  "description": "Deploy image services",
+  "run_list": [
+    "role[identity]",
+    "role[image]",
+    "role[network]",
+    "recipe[openstack-compute::nova-setup]",
+    "recipe[openstack-compute::identity_registration]",
+    "recipe[openstack-compute::conductor]",
+    "recipe[openstack-compute::api-os-compute]",
+    "recipe[openstack-compute::api-metadata]",
+    "recipe[openstack-compute::placement_api]",
+    "recipe[openstack-compute::scheduler]",
+    "recipe[openstack-compute::vncproxy]",
+    "recipe[openstack-compute::compute]"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "minimal_test",
+  "description": "Minimal tests",
+  "override_attributes": {
+    "openstack": {
+      "integration-test": {
+        "conf": {
+          "service_available": {
+            "cinder": true,
+            "glance": true,
+            "neutron": true,
+            "nova": true
+          }
+        }
+      }
+    }
+  },
+  "run_list": [
+    "role[integration_test]"
+  ]
+}

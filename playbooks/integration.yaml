@@ -6,3 +6,5 @@
         chdir: '{{ ansible_user_dir }}/src/opendev.org/openstack/openstack-chef'
       environment:
         WORKSPACE: '{{ ansible_user_dir }}'
+        PROJECT_DIR: '{{ ansible_user_dir }}/{{ zuul.project.src_dir }}'
+        PROJECT_NAME: '{{ zuul.project.short_name }}'

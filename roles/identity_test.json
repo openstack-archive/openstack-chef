@@ -1,0 +1,22 @@
+{
+  "name": "identity_test",
+  "description": "Identity cookbook tests",
+  "override_attributes": {
+    "openstack": {
+      "integration-test": {
+        "conf": {
+          "service_available": {
+            "ceilometer": false,
+            "glance": false,
+            "heat": false,
+            "horizon": false,
+            "nova": false
+          }
+        }
+      }
+    }
+  },
+  "run_list": [
+    "role[integration_test]"
+  ]
+}

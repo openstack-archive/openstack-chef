@@ -1,0 +1,15 @@
+{
+  "name": "dns",
+  "description": "Deploy dns services",
+  "run_list": [
+    "role[identity]",
+    "recipe[openstack-integration-test::dns]",
+    "recipe[openstack-dns::api]",
+    "recipe[openstack-dns::central]",
+    "recipe[openstack-dns::sink]",
+    "recipe[openstack-dns::mdns]",
+    "recipe[openstack-dns::producer]",
+    "recipe[openstack-dns::worker]",
+    "recipe[openstack-dns::identity_registration]"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "telemetry",
+  "description": "Deploy telemetry services",
+  "run_list": [
+    "role[identity]",
+    "recipe[openstack-telemetry::agent-central]",
+    "recipe[openstack-telemetry::agent-notification]",
+    "recipe[openstack-telemetry::identity_registration]",
+    "recipe[openstack-telemetry::aodh]",
+    "recipe[openstack-telemetry::gnocchi_install]",
+    "recipe[openstack-telemetry::gnocchi_configure]"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "identity",
+  "description": "Deploy identity cookbook",
+  "run_list": [
+    "role[common]",
+    "role[ops_database]",
+    "role[ops_messaging]",
+    "recipe[openstack-identity::server-apache]",
+    "recipe[openstack-identity::registration]",
+    "recipe[openstack-identity::openrc]"
+  ]
+}

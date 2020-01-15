@@ -1,0 +1,23 @@
+{
+  "name": "block_storage_test",
+  "description": "Block storage cookbook tests",
+  "override_attributes": {
+    "openstack": {
+      "integration-test": {
+        "conf": {
+          "service_available": {
+            "ceilometer": false,
+            "glance": false,
+            "heat": false,
+            "horizon": false,
+            "nova": false,
+            "cinder": true
+          }
+        }
+      }
+    }
+  },
+  "run_list": [
+    "role[integration_test]"
+  ]
+}

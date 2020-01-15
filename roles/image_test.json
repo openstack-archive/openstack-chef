@@ -1,0 +1,22 @@
+{
+  "name": "image_test",
+  "description": "Image cookbook tests",
+  "override_attributes": {
+    "openstack": {
+      "integration-test": {
+        "conf": {
+          "service_available": {
+            "ceilometer": false,
+            "glance": true,
+            "heat": false,
+            "horizon": false,
+            "nova": false
+          }
+        }
+      }
+    }
+  },
+  "run_list": [
+    "role[integration_test]"
+  ]
+}

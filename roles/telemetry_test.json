@@ -1,0 +1,7 @@
+{
+  "name": "telemetry_test",
+  "description": "telemetry cookbook tests",
+  "override_attributes": {},
+  "run_list": [
+  ]
+}

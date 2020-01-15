@@ -1,9 +1,9 @@
 source 'https://supermarket.chef.io'
 
+solver :ruby, :required
+
 %w(
-  integration-test
-  orchestration
-  telemetry
+  bare-metal
   block-storage
   common
   compute
@@ -11,10 +11,12 @@ source 'https://supermarket.chef.io'
   dns
   identity
   image
+  integration-test
   network
   ops-database
   ops-messaging
-  bare-metal
+  orchestration
+  telemetry
 ).each do |cookbook|
   if Dir.exist?("../cookbook-openstack-#{cookbook}")
     cookbook "openstack-#{cookbook}", path: "../cookbook-openstack-#{cookbook}"
@@ -31,3 +33,6 @@ end
 
 cookbook 'openstack_test', path: 'test/cookbooks/openstack_test'
 cookbook 'statsd', github: 'librato/statsd-cookbook'
+# TODO(ramereth): Remove after this PR is merged
+# https://github.com/joyofhex/cookbook-bind/pull/60
+cookbook 'bind', github: 'ramereth/cookbook-bind', branch: 'fix-notifies-with-delayed-actions'

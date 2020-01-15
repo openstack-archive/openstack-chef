@@ -1,0 +1,7 @@
+{
+  "name": "common_test",
+  "description": "common cookbook tests",
+  "override_attributes": {},
+  "run_list": [
+  ]
+}

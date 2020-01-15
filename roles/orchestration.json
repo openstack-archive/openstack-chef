@@ -1,0 +1,14 @@
+{
+  "name": "orchestration",
+  "description": "Deploy orchestration services",
+  "run_list": [
+    "role[identity]",
+    "role[image]",
+    "role[network]",
+    "role[compute]",
+    "recipe[openstack-orchestration::engine]",
+    "recipe[openstack-orchestration::api]",
+    "recipe[openstack-orchestration::api-cfn]",
+    "recipe[openstack-orchestration::identity_registration]"
+  ]
+}

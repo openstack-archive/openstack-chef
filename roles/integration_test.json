@@ -1,0 +1,7 @@
+{
+  "name": "integration_test",
+  "description": "Run integration-test cookbook",
+  "run_list": [
+    "recipe[openstack-integration-test::setup]"
+  ]
+}

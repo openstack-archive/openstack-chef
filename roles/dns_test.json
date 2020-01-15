@@ -1,0 +1,7 @@
+{
+  "name": "dns_test",
+  "description": "dns cookbook tests",
+  "override_attributes": {},
+  "run_list": [
+  ]
+}

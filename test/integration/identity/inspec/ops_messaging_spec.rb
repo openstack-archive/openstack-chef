@@ -1,0 +1,1 @@
+../../ops-messaging/inspec/ops_messaging_spec.rb
