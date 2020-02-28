@@ -6,14 +6,6 @@
       "listen": [
 
       ]
-    },
-    "mariadb": {
-      "install": {
-        "version": "10.1"
-      },
-      "apt_repository": {
-        "base_url": "ftp.osuosl.org/pub/mariadb/repo"
-      }
     }
   },
   "override_attributes": {

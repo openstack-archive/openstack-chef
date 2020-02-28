@@ -8,12 +8,10 @@ describe service 'mysql' do
   it { should be_enabled }
 end
 
-my_cnf = os.family == 'redhat' ? '/etc/my.cnf.d/openstack.cnf' : '/etc/mysql/conf.d/openstack.cnf'
-
-describe mysql_conf(my_cnf).params('mysqld') do
-  its('default-storage-engine') { should eq 'InnoDB' }
+describe mysql_conf.params('mysqld') do
+  its('default_storage_engine') { should eq 'InnoDB' }
   its('innodb_autoinc_lock_mode') { should eq '1' }
-  its('innodb_file_per_table') { should eq 'OFF' }
+  its('innodb_file_per_table') { should eq '0' }
   its('innodb_thread_concurrency') { should eq '0' }
   its('innodb_commit_concurrency') { should eq '0' }
   its('innodb_read_io_threads') { should eq '4' }

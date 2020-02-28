@@ -8,7 +8,7 @@ driver:
     cpus: 4
     memory: 8192
   network:
-  - ["forwarded_port", {guest: 443, host: 9443}]
+  - ["forwarded_port", {guest: 443, host: 9443, auto_correct: true}]
   - ["private_network", {ip: <%= public_ip %>}]
 
 provisioner:
