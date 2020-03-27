@@ -17,7 +17,6 @@
     run: playbooks/integration.yaml
     post-run: playbooks/post.yaml
     timeout: 5400
-    voting: false # TODO(ramereth): Remove after this gets merged
 
 - job:
     name: openstack-chef-minimal-integration-ubuntu
@@ -29,7 +28,6 @@
     run: playbooks/minimal.yaml
     post-run: playbooks/post.yaml
     timeout: 5400
-    voting: false
 
 - job:
     name: openstack-chef-integration-centos
@@ -41,7 +39,6 @@
     run: playbooks/integration.yaml
     post-run: playbooks/post.yaml
     timeout: 5400
-    voting: false # TODO(ramereth): Remove after this gets merged
 
 - job:
     name: openstack-chef-minimal-integration-centos
@@ -53,7 +50,6 @@
     run: playbooks/minimal.yaml
     post-run: playbooks/post.yaml
     timeout: 5400
-    voting: false
 
 - project-template:
     name: openstack-chef-repo-jobs
@@ -66,8 +62,8 @@
       queue: openstack-chef
       jobs:
         - openstack-chef-delivery
-        #- openstack-chef-integration-ubuntu
-        #- openstack-chef-integration-centos
+        - openstack-chef-integration-ubuntu
+        - openstack-chef-integration-centos
 
 - project-template:
     name: openstack-chef-jobs
@@ -82,10 +78,10 @@
       queue: openstack-chef
       jobs:
         - openstack-chef-delivery
-        #- openstack-chef-integration-ubuntu
-        #- openstack-chef-integration-centos
-        #- openstack-chef-minimal-integration-ubuntu
-        #- openstack-chef-minimal-integration-centos
+        - openstack-chef-integration-ubuntu
+        - openstack-chef-integration-centos
+        - openstack-chef-minimal-integration-ubuntu
+        - openstack-chef-minimal-integration-centos
 
 - project:
     templates:
