@@ -7,15 +7,6 @@
 # full list see the documentation:
 # http://www.sphinx-doc.org/en/stable/config.html
 
-# -- Path setup --------------------------------------------------------------
-
-import imp
-import os
-import re
-import sys
-
-import openstackdocstheme
-
 # -- Chef OpenStack configuration --------------------------------------------
 target_name = 'openstack-chef'
 description = 'Chef OpenStack uses Chef to deploy OpenStack environments.'
@@ -96,10 +87,6 @@ html_static_path = ['_static']
 # .htaccess) here, relative to this directory. These files are copied
 # directly to the root of the documentation.
 # html_extra_path = []
-
-# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
-# using the given strftime format.
-html_last_updated_fmt = '%Y-%m-%d %H:%M'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
