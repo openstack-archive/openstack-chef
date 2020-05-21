@@ -6,7 +6,7 @@
 
 - hosts: all
   vars:
-    release: 0.15.18
+    release: 0.18.3
     chef_workstation: chef-workstation_{{ release }}-1_amd64.deb
   tasks:
   - name: Fetch chef-workstation package
