@@ -17,7 +17,7 @@ Architectures and a sane example on how to start with OpenStack using
 Chef.
 
 With the ``master`` branch of the cookbooks, which is currently tied to
-the base OpenStack Stein release, this supports deploying to Ubuntu
+the base OpenStack Train release, this supports deploying to Ubuntu
 18.04 and CentOS 7 in monolithic, or allinone, and non-HA multinode
 configurations with Neutron. The cookbooks support a fully HA
 configuration, but we do not test for that as there are far numerous

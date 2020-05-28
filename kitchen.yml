@@ -20,6 +20,7 @@ provisioner:
   always_update_cookbooks: true
   product_name: chef
   product_version: 15
+  deprecations_as_errors: true
   # Copy secret to /tmp/kitchen on test VM. Kitchen tries to gather secrets
   # before any recipes had a chance to run -> we cannot use a recipe to put the
   # secrets file in place.
@@ -92,20 +93,8 @@ suites:
     run_list:
       - recipe[openstack_test]
       - role[identity]
-      - recipe[openstack-network::lbaas]
       - role[network]
       - role[network_test]
-    attributes:
-      openstack:
-        network:
-          conf:
-            DEFAULT:
-              service_plugins: 'router,neutron_lbaas.services.loadbalancer.plugin.LoadBalancerPluginv2'
-        network_lbaas:
-          enabled: true
-    verifier:
-      inspec_tests:
-        - path:  test/integration/network-optional/inspec
   - name: compute
     run_list:
       - recipe[openstack_test]
