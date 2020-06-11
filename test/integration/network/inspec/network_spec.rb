@@ -1,4 +1,5 @@
 openrc = 'bash -c "source /root/openrc && '
+platform = os.family
 
 %w(
   9696
@@ -25,13 +26,22 @@ end
 
 describe command "#{openrc} openstack network show local_net -f shell -c admin_state_up -c status\"" do
   its('exit_status') { should eq 0 }
-  its('stdout') { should include 'admin_state_up="UP"' }
+  its('stdout') { should include 'admin_state_up="True"' }
   its('stdout') { should include 'status="ACTIVE"' }
 end
 
 describe command "#{openrc} openstack subnet show local_subnet -f shell -c enable_dhcp -c cidr -c allocation_pools\"" do
   its('exit_status') { should eq 0 }
-  its('stdout') { should include 'allocation_pools="192.168.180.2-192.168.180.254"' }
+  case platform
+  when 'debian'
+    its('stdout') do
+      should include 'allocation_pools="[{\'start\': \'192.168.180.2\', \'end\': \'192.168.180.254\'}]"'
+    end
+  when 'redhat'
+    its('stdout') do
+      should include 'allocation_pools="[{u\'start\': u\'192.168.180.2\', u\'end\': u\'192.168.180.254\'}]'
+    end
+  end
   its('stdout') { should include 'cidr="192.168.180.0/24"' }
   its('stdout') { should include 'enable_dhcp="True"' }
 end
@@ -54,10 +64,10 @@ end
 
 describe command "#{openrc} openstack network agent list -f value -c Binary -c State -c Alive\"" do
   its('exit_status') { should eq 0 }
-  its('stdout') { should match /^:-\) UP neutron-dhcp-agent$/ }
-  its('stdout') { should match /^:-\) UP neutron-metadata-agent$/ }
-  its('stdout') { should match /^:-\) UP neutron-l3-agent$/ }
-  its('stdout') { should match /^:-\) UP neutron-openvswitch-agent$/ }
+  its('stdout') { should match /^True True neutron-dhcp-agent$/ }
+  its('stdout') { should match /^True True neutron-metadata-agent$/ }
+  its('stdout') { should match /^True True neutron-l3-agent$/ }
+  its('stdout') { should match /^True True neutron-openvswitch-agent$/ }
 end
 
 describe command "#{openrc} openstack extension list --network -f value -c Alias\"" do

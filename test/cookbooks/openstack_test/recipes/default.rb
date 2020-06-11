@@ -5,3 +5,7 @@ execute 'Update /etc/apt/sources.list' do
   not_if 'grep -q ubuntu.osuosl.org /etc/apt/sources.list'
   action :nothing
 end.run_action(:run)
+
+apt_update 'update' do
+  frequency 3600
+end

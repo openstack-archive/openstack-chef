@@ -15,7 +15,6 @@ nova_services =
     %w(
       openstack-nova-compute
       openstack-nova-conductor
-      openstack-nova-consoleauth
       openstack-nova-novncproxy
       openstack-nova-scheduler
     )
@@ -23,7 +22,6 @@ nova_services =
     %w(
       nova-compute
       nova-conductor
-      nova-consoleauth
       nova-novncproxy
       nova-scheduler
     )
@@ -40,12 +38,12 @@ openrc = 'bash -c "source /root/openrc && '
 
 describe command "#{openrc} nova-manage version\"" do
   its('exit_status') { should eq 0 }
-  its('stdout') { should match /^19.[0-9]+/ }
+  its('stdout') { should match /^20.[0-9]+/ }
 end
 
 describe command "#{openrc} nova-manage db version\"" do
   its('exit_status') { should eq 0 }
-  its('stdout') { should match /^391$/ }
+  its('stdout') { should match /^402$/ }
 end
 
 describe command "#{openrc} openstack user list -f value -c Name\"" do

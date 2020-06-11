@@ -29,7 +29,7 @@ end
 
 describe command "#{openrc} cinder-manage db version\"" do
   its('exit_status') { should eq 0 }
-  its('stdout') { should match /^128$/ }
+  its('stdout') { should match /^132$/ }
 end
 
 describe command "#{openrc} openstack user list -f value -c Name\"" do

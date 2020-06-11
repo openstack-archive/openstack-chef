@@ -182,7 +182,7 @@ task integration: %i(create_key berks_vendor) do
 
   # Three passes to ensure idempotency. prefer each to times, even if it
   # reads weird
-  for i in 1..3 do
+  (1..3).each do |i|
     begin
       puts "####### Pass #{i}"
       # Kick off chef client in local mode, will converge OpenStack right on the gate job "in place"

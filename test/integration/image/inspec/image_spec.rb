@@ -13,7 +13,7 @@ end
 
 describe command "#{openrc} glance-manage db_version\"" do
   its('exit_status') { should eq 0 }
-  its('stdout') { should include 'rocky' }
+  its('stdout') { should include 'train_contract01' }
 end
 
 describe command "#{openrc} openstack image list -f value -c Name\"" do

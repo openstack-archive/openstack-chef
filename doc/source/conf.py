@@ -10,8 +10,8 @@
 # -- Chef OpenStack configuration --------------------------------------------
 target_name = 'openstack-chef'
 description = 'Chef OpenStack uses Chef to deploy OpenStack environments.'
-previous_series_name = 'rocky'
-current_series_name = 'stein'
+previous_series_name = 'stein'
+current_series_name = 'train'
 
 # -- Project information -----------------------------------------------------
 
