@@ -1,19 +1,6 @@
 - hosts: all
   roles:
     - bindep
+    - install-chef
   vars:
     bindep_file: /home/zuul/src/opendev.org/openstack/openstack-chef/bindep.txt
-
-- hosts: all
-  tasks:
-  - name: Install chef package
-    shell:
-      cmd: ./scripts/install.sh -v 15
-      chdir: /home/zuul/src/opendev.org/openstack/openstack-chef/
-    become: yes
-  - name: Install berkshelf
-    shell: /opt/chef/embedded/bin/gem install -N berkshelf
-    become: yes
-  - name: Install cookstyle
-    shell: /opt/chef/embedded/bin/gem install -N cookstyle
-    become: yes

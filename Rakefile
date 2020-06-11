@@ -89,8 +89,8 @@ def _run_env_queries
       'uname' => ['-a'],
       'pwd' => [''],
       'env' => [''],
-      '/opt/chef/embedded/bin/chef-client' => ['--chef-license accept --version'],
-      '/opt/chef/embedded/bin/inspec' =>
+      '/opt/chef/bin/chef-client' => ['--chef-license accept --version'],
+      '/opt/chef/bin/inspec' =>
         [
           'version --chef-license accept',
           'detect --chef-license accept',
@@ -176,8 +176,12 @@ task integration: %i(create_key berks_vendor) do
   end
   inspec_dir = 'test/integration/' + project_name.tr('_', '-') + '/inspec'
   run_list = "role[#{project_name}],role[#{project_name}_test]"
+
   # This is a workaround for allowing chef-client to run in local mode
   sh %(sudo mkdir -p /etc/chef && sudo cp .chef/encrypted_data_bag_secret /etc/chef/openstack_data_bag_secret)
+  # Add a symlink in case we run cinc instead of chef
+  sh %(sudo ln -s /etc/chef /etc/cinc)
+
   _run_env_queries
 
   # Three passes to ensure idempotency. prefer each to times, even if it
@@ -200,7 +204,7 @@ task integration: %i(create_key berks_vendor) do
   # Run InSpec & Tempest tests
   puts '## InSpec & Tempest'
   begin
-    sh %(sudo /opt/chef/embedded/bin/inspec exec --no-color #{inspec_dir} --reporter=cli html:#{log_dir}/inspec.html)
+    sh %(sudo /opt/chef/bin/inspec exec --no-color #{inspec_dir} --reporter=cli html:#{log_dir}/inspec.html)
     if File.exist?('/opt/tempest-venv/tempest.sh')
       # Run Tempest separately from InSpec due to no way of extending the command timeout beyond 600s
       # https://github.com/inspec/inspec/issues/3866
