@@ -1,6 +1,6 @@
 - name: Install client
   script:
-    cmd: "{{ openstack_chef_client_type }}-install.sh -v 15"
+    cmd: "{{ openstack_chef_client_type }}-install.sh -v {{ openstack_chef_client_version }}"
   become: yes
 - name: Create symlink for cinc
   file:

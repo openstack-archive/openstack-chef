@@ -1,1 +1,2 @@
 openstack_chef_client_type: chef
+openstack_chef_client_version: 16

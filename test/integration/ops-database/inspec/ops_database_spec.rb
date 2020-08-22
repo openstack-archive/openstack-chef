@@ -24,6 +24,8 @@ describe mysql_conf.params('mysqld') do
   its('max_connections') { should eq '307' }
 end
 
+inspec_version = inspec.version
+
 describe mysql_session('root', 'mypass', '127.0.0.1').query('show databases;') do
   %w(
     ceilometer
@@ -40,6 +42,12 @@ describe mysql_session('root', 'mypass', '127.0.0.1').query('show databases;') d
     nova_api
     nova_cell0
   ).each do |db|
-    its('stdout') { should include db }
+    # TODO: Work around upstream InSpec issue
+    # https://github.com/inspec/inspec/issues/5218
+    if Gem::Version.new(inspec_version) >= Gem::Version.new('4.22.2')
+      its('output') { should include db }
+    else
+      its('stdout') { should include db }
+    end
   end
 end
