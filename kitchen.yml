@@ -19,7 +19,7 @@ provisioner:
   #   always_update_cookbooks: <%= !ENV['CI'] %>
   always_update_cookbooks: true
   product_name: chef
-  product_version: 15
+  product_version: 16
   deprecations_as_errors: true
   # Copy secret to /tmp/kitchen on test VM. Kitchen tries to gather secrets
   # before any recipes had a chance to run -> we cannot use a recipe to put the

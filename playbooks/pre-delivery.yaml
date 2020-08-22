@@ -6,7 +6,7 @@
 
 - hosts: all
   vars:
-    release: 0.18.3
+    release: 20.8.111
     chef_workstation: chef-workstation_{{ release }}-1_amd64.deb
   tasks:
   - name: Fetch chef-workstation package
@@ -18,7 +18,4 @@
     become: yes
   - name: Show chef environment, accept chef license as side effect
     shell: chef env --chef-license accept
-    become: yes
-  - name: Install newer fog-openstack gem
-    shell: chef gem install fog-openstack --version '~> 1.0.0' --no-user-install -N
     become: yes

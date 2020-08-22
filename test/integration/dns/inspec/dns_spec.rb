@@ -56,7 +56,7 @@ describe command "#{openrc} openstack zone create --email dnsmaster@example.com 
   its('exit_status') { should eq 0 }
 end
 
-describe command "#{openrc} openstack recordset create --record '10.0.0.1' --type A example.com. www && sleep 10\"" do
+describe command "#{openrc} openstack recordset create --record '10.0.0.1' --type A example.com. www && sleep 20\"" do
   its('exit_status') { should eq 0 }
 end
 
