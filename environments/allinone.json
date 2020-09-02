@@ -10,9 +10,11 @@
   },
   "override_attributes": {
     "openstack": {
+      "release": "ussri",
       "is_release": true,
       "apt": {
-        "update_apt_cache": "true"
+        "update_apt_cache": true,
+        "live_updates_enabled": false
       },
       "telemetry": {
         "conf": {
@@ -41,6 +43,76 @@
         "image_upload": true
       },
       "compute": {
+        "platform": {
+          "api_os_compute_packages": [
+            "python3-nova",
+            "nova-api"
+          ],
+          "api_os_compute_service": "nova-api",
+          "memcache_python_packages": [
+            "python3-memcache"
+          ],
+          "compute_api_metadata_packages": [
+            "python3-nova",
+            "nova-api-metadata"
+          ],
+          "compute_api_metadata_service": "nova-api-metadata",
+          "compute_compute_packages": [
+            "python3-nova",
+            "nova-compute"
+          ],
+          "qemu_compute_packages": [
+            "python3-nova",
+            "nova-compute-qemu"
+          ],
+          "kvm_compute_packages": [
+            "python3-nova",
+            "nova-compute-kvm"
+          ],
+          "compute_compute_service": "nova-compute",
+          "compute_scheduler_packages": [
+            "python3-nova",
+            "nova-scheduler"
+          ],
+          "compute_scheduler_service": "nova-scheduler",
+          "compute_conductor_packages": [
+            "python3-nova",
+            "nova-conductor"
+          ],
+          "compute_conductor_service": "nova-conductor",
+          "compute_vncproxy_packages": [
+            "novnc",
+            "websockify",
+            "python3-nova",
+            "nova-novncproxy"
+          ],
+          "compute_vncproxy_service": "nova-novncproxy",
+          "compute_serialproxy_packages": [
+            "python3-nova",
+            "nova-serialproxy"
+          ],
+          "compute_serialproxy_service": "nova-serialproxy",
+          "libvirt_packages": [
+            "python3-guestfs"
+          ],
+          "libvirt_service": "libvirtd",
+          "dbus_service": "dbus",
+          "mysql_service": "mysql",
+          "common_packages": [
+            "nova-common",
+            "python3-nova"
+          ],
+          "iscsi_helper": "tgtadm",
+          "volume_packages": [
+            "sysfsutils",
+            "sg3-utils",
+            "multipath-tools"
+          ],
+          "package_overrides": ""
+        },
+        "libvirt": {
+          "libvirtd_opts": ""
+        },
         "conf": {
           "libvirt": {
             "cpu_type": "none",
