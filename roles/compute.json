@@ -1,6 +1,6 @@
 {
-  "name": "image",
-  "description": "Deploy image services",
+  "name": "compute",
+  "description": "Deploy compute services",
   "run_list": [
     "role[identity]",
     "role[image]",
