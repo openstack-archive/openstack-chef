@@ -10,3 +10,4 @@ Contributor Guide
    community
    talk-to-us
    ci
+   create-stable-branch
