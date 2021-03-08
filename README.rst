@@ -30,7 +30,7 @@ Prerequisites
 -------------
 
 - Chef 15 or higher
-- `Chef Workstation`_ 20.9.158 or later
+- `Chef Workstation`_ 21.2.303 or later
 - `Vagrant`_ 2.0 or later with `VirtualBox>`_ or some other provider
 
 .. _Chef Workstation: https://downloads.chef.io/chef-workstation/
