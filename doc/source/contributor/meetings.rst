@@ -18,8 +18,8 @@ IRC_ between the hours of 14:00 UTC and 17:00 UTC.
 IRC Meetings
 ============
 
-We hold public meetings as needed on ``#openstack-chef`` on Freenode. If a
-meeting needs to be held, it will be announced on the OpenStack-dev mailing
+We hold public meetings as needed on ``#openstack-chef`` on OFTC. If a
+meeting needs to be held, it will be announced on the openstack-discuss mailing
 list.
 
 .. list-table::

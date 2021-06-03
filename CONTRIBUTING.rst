@@ -31,5 +31,5 @@ Contacts
 --------
 
 - Mailing list: [chef] on the OpenStack-Discuss mailing list
-- IRC: ``#openstack-chef`` is our channel on irc.freenode.net
+- IRC: ``#openstack-chef`` is our channel on irc.oftc.net
 - Wiki: https://wiki.openstack.org/wiki/Chef/GettingStarted
