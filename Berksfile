@@ -37,4 +37,4 @@ cookbook 'openstack_test', path: 'test/cookbooks/openstack_test'
 cookbook 'statsd', github: 'librato/statsd-cookbook'
 # TODO(ramereth): Remove after this PR is merged
 # https://github.com/joyofhex/cookbook-bind/pull/60
-cookbook 'bind', github: 'ramereth/cookbook-bind', branch: 'fix-notifies-with-delayed-actions'
+cookbook 'bind', github: 'joyofhex/cookbook-bind'
