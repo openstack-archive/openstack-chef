@@ -6,7 +6,6 @@
     pre-run: playbooks/pre-delivery.yaml
     run: playbooks/delivery.yaml
     timeout: 1800
-    voting: false # TODO(ramereth): Remove after this gets merged
 
 - job:
     name: openstack-chef-integration-ubuntu
@@ -18,7 +17,6 @@
     run: playbooks/integration.yaml
     post-run: playbooks/post.yaml
     timeout: 5400
-    voting: false # TODO(ramereth): Remove after this gets merged
 
 - job:
     name: openstack-chef-minimal-integration-ubuntu
@@ -30,7 +28,6 @@
     run: playbooks/minimal.yaml
     post-run: playbooks/post.yaml
     timeout: 5400
-    voting: false # TODO(ramereth): Remove after this gets merged
 
 - job:
     name: openstack-chef15-minimal-integration-ubuntu
@@ -48,7 +45,6 @@
     run: playbooks/integration.yaml
     post-run: playbooks/post.yaml
     timeout: 5400
-    voting: false # TODO(ramereth): Remove after this gets merged
 
 - job:
     name: openstack-chef-minimal-integration-centos
@@ -60,7 +56,6 @@
     run: playbooks/minimal.yaml
     post-run: playbooks/post.yaml
     timeout: 5400
-    voting: false # TODO(ramereth): Remove after this gets merged
 
 - job:
     name: openstack-chef15-minimal-integration-centos
