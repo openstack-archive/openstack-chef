@@ -17,3 +17,7 @@
 - name: Install cookstyle
   shell: /opt/chef/embedded/bin/gem install -N cookstyle
   become: yes
+- name: Setup SELinux
+  shell: "setenforce {{ openstack_selinux_setenforce }}"
+  become: yes
+  when: ansible_distribution == "CentOS"

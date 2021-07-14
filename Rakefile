@@ -110,6 +110,7 @@ def _run_env_queries
   when 'centos7'
     _run_commands(
       'basic rhel env queries', {
+        '/sbin/getenforce' => [''],
         '/usr/sbin/ip' => ['addr'],
         'cat' => ['/etc/yum.repos.d/*'],
       },
