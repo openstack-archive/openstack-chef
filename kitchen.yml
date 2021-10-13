@@ -18,7 +18,7 @@ provisioner:
   # For example:
   #   always_update_cookbooks: <%= !ENV['CI'] %>
   always_update_cookbooks: true
-  product_name: chef
+  product_name: <%= ENV['CHEF_PRODUCT_NAME'] || 'chef' %>
   product_version: 16
   deprecations_as_errors: true
   # Copy secret to /tmp/kitchen on test VM. Kitchen tries to gather secrets
