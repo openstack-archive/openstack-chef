@@ -10,9 +10,7 @@
   become: yes
   when: openstack_chef_client_type == 'cinc'
 - name: Install berkshelf
-  # TODO(ramereth): > 7.1.0 doesn't work with ruby 2.6 which is used on Chef/Cinc 15
-  # Remove this once we remove testing for Chef/Cinc 15
-  shell: /opt/chef/embedded/bin/gem install -N berkshelf -v 7.1.0
+  shell: /opt/chef/embedded/bin/gem install -N berkshelf
   become: yes
 - name: Install cookstyle
   shell: /opt/chef/embedded/bin/gem install -N cookstyle

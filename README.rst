@@ -29,8 +29,8 @@ paths to HA.
 Prerequisites
 -------------
 
-- Chef 15 or higher
-- `Chef Workstation`_ 21.2.303 or later
+- Chef 16 or higher
+- `Chef Workstation`_ 21.10.640 or later
 - `Vagrant`_ 2.0 or later with `VirtualBox>`_ or some other provider
 
 .. _Chef Workstation: https://downloads.chef.io/chef-workstation/

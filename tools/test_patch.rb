@@ -3,7 +3,7 @@
 # Test patches against the testing repo
 #
 # Author: Mark Vanderwiel (<vanderwl@us.ibm.com>)
-# Copyright:: (c) 2015, IBM, Corp.
+# Copyright:: 2015-2021, IBM, Corp.
 
 require 'fileutils'
 require 'English'

@@ -1,3 +1,3 @@
 openstack_chef_client_type: chef
-openstack_chef_client_version: 16
+openstack_chef_client_version: 17
 openstack_selinux_setenforce: 0
