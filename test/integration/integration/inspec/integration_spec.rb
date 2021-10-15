@@ -1,5 +1,6 @@
 openrc = 'bash -c "source /root/openrc && '
 platform = os.family
+os_release = os.release.to_i
 
 describe command "#{openrc} openstack network show local_net -f shell -c admin_state_up -c status\"" do
   its('exit_status') { should eq 0 }
@@ -15,8 +16,14 @@ describe command "#{openrc} openstack subnet show local_subnet -f shell -c enabl
       should include 'allocation_pools="[{\'start\': \'192.168.180.2\', \'end\': \'192.168.180.254\'}]"'
     end
   when 'redhat'
-    its('stdout') do
-      should include 'allocation_pools="[{u\'start\': u\'192.168.180.2\', u\'end\': u\'192.168.180.254\'}]'
+    if os_release >= 8
+      its('stdout') do
+        should include 'allocation_pools="[{\'start\': \'192.168.180.2\', \'end\': \'192.168.180.254\'}]"'
+      end
+    else
+      its('stdout') do
+        should include 'allocation_pools="[{u\'start\': u\'192.168.180.2\', u\'end\': u\'192.168.180.254\'}]'
+      end
     end
   end
   its('stdout') { should include 'cidr="192.168.180.0/24"' }
@@ -87,7 +94,11 @@ describe command '/opt/tempest-venv/bin/tempest --version' do
   its('exit_status') { should eq 0 }
   case os_family
   when 'redhat'
-    its('stderr') { should match /^tempest 22.1.0$/ }
+    if os_release >= 8
+      its('stdout') { should match /^tempest 22.1.0$/ }
+    else
+      its('stderr') { should match /^tempest 22.1.0$/ }
+    end
   when 'debian'
     its('stdout') { should match /^tempest 22.1.0$/ }
   end

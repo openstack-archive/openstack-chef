@@ -7,11 +7,12 @@ describe kernel_parameter 'net.ipv4.conf.default.rp_filter' do
 end
 
 os_family = os.family
+os_release = os.release.to_i
 
 describe command 'openstack --version' do
   its('exit_status') { should eq 0 }
   # RHEL sends output to stderr while Ubuntu sends it to stdout
-  if os_family == 'redhat'
+  if os_family == 'redhat' && os_release == 7
     its('stderr') { should match /^openstack 4.0.[0-9]+$/ }
   else
     its('stdout') { should match /^openstack 4.0.[0-9]+$/ }
@@ -19,18 +20,33 @@ describe command 'openstack --version' do
 end
 
 if os.family == 'redhat'
-  %w(
-    centos-release-qemu-ev
-    python
-    python2-openstackclient
-    python2-pip
-    python2-setuptools
-    python2-wheel
-    python-devel
-    python-virtualenv
-  ).each do |pkg|
-    describe package pkg do
-      it { should be_installed }
+  if os_release >= 8
+    %w(
+      python3-pip
+      python3-setuptools
+      python3-virtualenv
+      python3-wheel
+      python36
+      python36-devel
+    ).each do |pkg|
+      describe package pkg do
+        it { should be_installed }
+      end
+    end
+  else
+    %w(
+      centos-release-qemu-ev
+      python
+      python2-openstackclient
+      python2-pip
+      python2-setuptools
+      python2-wheel
+      python-devel
+      python-virtualenv
+    ).each do |pkg|
+      describe package pkg do
+        it { should be_installed }
+      end
     end
   end
 

@@ -15,13 +15,6 @@
           }
         }
       }
-    },
-    "yum": {
-      "epel": {
-        "baseurl": "http://epel.osuosl.org/7/$basearch",
-        "mirrorlist": null,
-        "gpgkey": "http://epel.osuosl.org/RPM-GPG-KEY-EPEL-7"
-      }
     }
   },
   "override_attributes": {

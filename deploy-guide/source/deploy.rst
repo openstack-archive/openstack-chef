@@ -9,7 +9,7 @@ Tempest.
 
 * Software requirements:
 
-  * Ubuntu 18.04 LTS or CentOS 7 fresh install
+  * Ubuntu 18.04 LTS or CentOS 7 or 8 fresh install
   * `git` installed
   * `chef-client` installed: https://docs.chef.io/#setup
 

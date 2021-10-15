@@ -136,6 +136,7 @@ their ``metadata.rb`` dependencies. See below on specifics:
 #. Network (depends on Identity)
 #. Compute (depends on Image and Network)
 #. Dns (depends on Network)
+#. Bare Metal (depends on Image and Network)
 #. Orchestration (depends on Identity)
 #. Telemetry (depends on Identity)
 #. Dashboard (depends on Identity)

@@ -1,5 +1,6 @@
 openrc = 'bash -c "source /root/openrc && '
 platform = os.family
+os_release = os.release.to_i
 
 %w(
   9696
@@ -38,8 +39,14 @@ describe command "#{openrc} openstack subnet show local_subnet -f shell -c enabl
       should include 'allocation_pools="[{\'start\': \'192.168.180.2\', \'end\': \'192.168.180.254\'}]"'
     end
   when 'redhat'
-    its('stdout') do
-      should include 'allocation_pools="[{u\'start\': u\'192.168.180.2\', u\'end\': u\'192.168.180.254\'}]'
+    if os_release >= 8
+      its('stdout') do
+        should include 'allocation_pools="[{\'start\': \'192.168.180.2\', \'end\': \'192.168.180.254\'}]"'
+      end
+    else
+      its('stdout') do
+        should include 'allocation_pools="[{u\'start\': u\'192.168.180.2\', u\'end\': u\'192.168.180.254\'}]'
+      end
     end
   end
   its('stdout') { should include 'cidr="192.168.180.0/24"' }

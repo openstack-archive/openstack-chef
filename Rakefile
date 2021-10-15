@@ -80,6 +80,8 @@ if File.exist?('/usr/bin/apt-get')
   @platform = 'ubuntu18'
 elsif File.exist?('/usr/bin/yum')
   @platform = 'centos7'
+elsif File.exist?('/usr/bin/dnf')
+  @platform = 'centos8'
 end
 
 # Helper for looking at the starting environment
@@ -107,7 +109,7 @@ def _run_env_queries
       },
       false
     )
-  when 'centos7'
+  when 'centos7', 'centos8'
     _run_commands(
       'basic rhel env queries', {
         '/sbin/getenforce' => [''],
@@ -126,7 +128,7 @@ def _save_logs(prefix, log_dir)
   case @platform
   when 'ubuntu18'
     sh %(sudo /bin/ss -tunlp > #{log_dir}/#{prefix}/netstat.log)
-  when 'centos7'
+  when 'centos7', 'centos8'
     sh %(sudo /sbin/ss -tunlp > #{log_dir}/#{prefix}/netstat.log)
   end
   %w(
