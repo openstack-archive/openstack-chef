@@ -47,9 +47,9 @@ platforms:
   - name: centos-7
     driver:
       box: bento/centos-7
-  - name: centos-8
+  - name: centos-stream-8
     driver:
-      box: bento/centos-8
+      box: bento/centos-stream-8
 
 suites:
   - name: default

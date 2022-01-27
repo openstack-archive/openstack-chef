@@ -33,9 +33,9 @@
     voting: false # TODO(ramereth): Remove after this gets merged
 
 - job:
-    name: openstack-chef-integration-centos-8
+    name: openstack-chef-integration-centos-stream-8
     parent: base
-    nodeset: centos-8
+    nodeset: centos-8-stream
     description: Run integration tests with openstack-chef on CentOS
     required-projects: openstack/openstack-chef
     pre-run: playbooks/pre-integration.yaml
@@ -45,9 +45,9 @@
     voting: false # TODO(ramereth): Remove after this gets merged
 
 - job:
-    name: openstack-chef-minimal-integration-centos-8
+    name: openstack-chef-minimal-integration-centos-stream-8
     parent: base
-    nodeset: centos-8
+    nodeset: centos-8-stream
     description: Run minimal integration tests with openstack-chef on CentOS
     required-projects: openstack/openstack-chef
     pre-run: playbooks/pre-integration.yaml
@@ -64,12 +64,12 @@
 
 - job:
     name: openstack-chef-integration-centos-7
-    parent: openstack-chef-integration-centos-8
+    parent: openstack-chef-integration-centos-stream-8
     nodeset: centos-7
 
 - job:
     name: openstack-chef-minimal-integration-centos-7
-    parent: openstack-chef-minimal-integration-centos-8
+    parent: openstack-chef-minimal-integration-centos-stream-8
     nodeset: centos-7
 
 - job:
@@ -79,8 +79,8 @@
       openstack_chef_client_version: 16
 
 - job:
-    name: openstack-chef16-minimal-integration-centos-8
-    parent: openstack-chef-minimal-integration-centos-8
+    name: openstack-chef16-minimal-integration-centos-stream-8
+    parent: openstack-chef-minimal-integration-centos-stream-8
     vars:
       openstack_chef_client_version: 16
 
@@ -105,8 +105,8 @@
       openstack_chef_client_version: 16
 
 - job:
-    name: openstack-cinc16-integration-centos-8
-    parent: openstack-chef-integration-centos-8
+    name: openstack-cinc16-integration-centos-stream-8
+    parent: openstack-chef-integration-centos-stream-8
     vars:
       openstack_chef_client_type: cinc
       openstack_chef_client_version: 16
@@ -118,8 +118,8 @@
       openstack_chef_client_type: cinc
 
 - job:
-    name: openstack-cinc-integration-centos-8
-    parent: openstack-chef-integration-centos-8
+    name: openstack-cinc-integration-centos-stream-8
+    parent: openstack-chef-integration-centos-stream-8
     vars:
       openstack_chef_client_type: cinc
 
@@ -129,12 +129,12 @@
       jobs:
         - openstack-chef-delivery
         - openstack-chef-integration-centos-7
-        - openstack-chef-integration-centos-8
+        - openstack-chef-integration-centos-stream-8
         - openstack-chef-integration-ubuntu
         - openstack-cinc16-integration-centos-7
-        - openstack-cinc16-integration-centos-8
+        - openstack-cinc16-integration-centos-stream-8
         - openstack-cinc16-integration-ubuntu
-        - openstack-cinc-integration-centos-8
+        - openstack-cinc-integration-centos-stream-8
         - openstack-cinc-integration-centos-7
         - openstack-cinc-integration-ubuntu
     gate:
@@ -142,13 +142,13 @@
       jobs:
         - openstack-chef-delivery
         - openstack-chef-integration-centos-7
-        - openstack-chef-integration-centos-8
+        - openstack-chef-integration-centos-stream-8
         - openstack-chef-integration-ubuntu
         - openstack-cinc16-integration-centos-7
-        - openstack-cinc16-integration-centos-8
+        - openstack-cinc16-integration-centos-stream-8
         - openstack-cinc16-integration-ubuntu
         - openstack-cinc-integration-centos-7
-        - openstack-cinc-integration-centos-8
+        - openstack-cinc-integration-centos-stream-8
         - openstack-cinc-integration-ubuntu
 
 - project-template:
@@ -157,38 +157,38 @@
       jobs:
         - openstack-chef-delivery
         - openstack-chef-integration-centos-7
-        - openstack-chef-integration-centos-8
+        - openstack-chef-integration-centos-stream-8
         - openstack-chef-integration-ubuntu
         - openstack-chef-minimal-integration-centos-7
-        - openstack-chef-minimal-integration-centos-8
+        - openstack-chef-minimal-integration-centos-stream-8
         - openstack-chef-minimal-integration-ubuntu
         - openstack-chef16-minimal-integration-centos-7
-        - openstack-chef16-minimal-integration-centos-8
+        - openstack-chef16-minimal-integration-centos-stream-8
         - openstack-chef16-minimal-integration-ubuntu
         - openstack-cinc16-integration-centos-7
-        - openstack-cinc16-integration-centos-8
+        - openstack-cinc16-integration-centos-stream-8
         - openstack-cinc16-integration-ubuntu
         - openstack-cinc-integration-centos-7
-        - openstack-cinc-integration-centos-8
+        - openstack-cinc-integration-centos-stream-8
         - openstack-cinc-integration-ubuntu
     gate:
       queue: openstack-chef
       jobs:
         - openstack-chef-delivery
         - openstack-chef-integration-centos-7
-        - openstack-chef-integration-centos-8
+        - openstack-chef-integration-centos-stream-8
         - openstack-chef-integration-ubuntu
         - openstack-chef-minimal-integration-centos-7
-        - openstack-chef-minimal-integration-centos-8
+        - openstack-chef-minimal-integration-centos-stream-8
         - openstack-chef-minimal-integration-ubuntu
         - openstack-chef16-minimal-integration-centos-7
-        - openstack-chef16-minimal-integration-centos-8
+        - openstack-chef16-minimal-integration-centos-stream-8
         - openstack-chef16-minimal-integration-ubuntu
         - openstack-cinc16-integration-centos-7
-        - openstack-cinc16-integration-centos-8
+        - openstack-cinc16-integration-centos-stream-8
         - openstack-cinc16-integration-ubuntu
         - openstack-cinc-integration-centos-7
-        - openstack-cinc-integration-centos-8
+        - openstack-cinc-integration-centos-stream-8
         - openstack-cinc-integration-ubuntu
 
 - project:

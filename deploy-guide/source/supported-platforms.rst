@@ -4,7 +4,7 @@ Supported Platforms
 The following operating systems and versions are supported by the OpenStack cookbooks:
 
 * Ubuntu 18.04 LTS (Bionic Beaver)
-* CentOS 7 or 8
+* CentOS 7 or Stream 8
 
 The cookbooks are tested and verified to work on the Chef stable track using
 the `Chef Workstation <https://www.chef.sh/docs/chef-workstation/getting-started/>`_.
