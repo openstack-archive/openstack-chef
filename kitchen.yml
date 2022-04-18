@@ -21,6 +21,7 @@ provisioner:
   product_name: <%= ENV['CHEF_PRODUCT_NAME'] || 'chef' %>
   product_version: 17
   deprecations_as_errors: true
+  multiple_converge: 2
   # Copy secret to /tmp/kitchen on test VM. Kitchen tries to gather secrets
   # before any recipes had a chance to run -> we cannot use a recipe to put the
   # secrets file in place.
@@ -74,6 +75,7 @@ suites:
     run_list:
       - recipe[openstack_test]
       - role[openstackclient]
+      - recipe[openstack_test::openstackclient]
   - name: ops-database
     run_list:
       - recipe[openstack_test]
