@@ -91,6 +91,7 @@
 
 - project-template:
     name: openstack-chef-repo-jobs
+    queue: openstack-chef
     check:
       jobs:
         - openstack-chef-delivery
@@ -101,7 +102,6 @@
         - openstack-cinc-integration-centos
         - openstack-cinc-integration-ubuntu
     gate:
-      queue: openstack-chef
       jobs:
         - openstack-chef-delivery
         - openstack-chef-integration-centos
@@ -113,6 +113,7 @@
 
 - project-template:
     name: openstack-chef-jobs
+    queue: openstack-chef
     check:
       jobs:
         - openstack-chef-delivery
@@ -127,7 +128,6 @@
         - openstack-cinc-integration-centos
         - openstack-cinc-integration-ubuntu
     gate:
-      queue: openstack-chef
       jobs:
         - openstack-chef-delivery
         - openstack-chef-integration-centos
