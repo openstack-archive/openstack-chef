@@ -12,8 +12,13 @@
       chdir: /home/zuul/src/opendev.org/openstack/openstack-chef/
     become: yes
   - name: Install berkshelf
-    shell: /opt/chef/embedded/bin/gem install --no-rdoc --no-ri berkshelf
+    shell: |
+      /opt/chef/embedded/bin/gem install --no-rdoc --no-ri faraday-net_http -v 2.1.0
+      /opt/chef/embedded/bin/gem install --no-rdoc --no-ri faraday -v 1.10.3
+      /opt/chef/embedded/bin/gem install --no-rdoc --no-ri berkshelf -v 7.0.10
     become: yes
   - name: Install cookstyle
-    shell: /opt/chef/embedded/bin/gem install --no-rdoc --no-ri cookstyle
+    shell: |
+      /opt/chef/embedded/bin/gem install --no-rdoc --no-ri rubocop-ast -v 1.17.0
+      /opt/chef/embedded/bin/gem install --no-rdoc --no-ri cookstyle -v 7.32.1
     become: yes
