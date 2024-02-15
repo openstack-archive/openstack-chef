@@ -1,6 +1,0 @@
-- hosts: all
-  roles:
-    - bindep
-    - install-chef
-  vars:
-    bindep_file: /home/zuul/src/opendev.org/openstack/openstack-chef/bindep.txt

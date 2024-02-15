@@ -1,1 +1,0 @@
-../../ops-database/inspec/ops_database_spec.rb

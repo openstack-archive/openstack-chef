@@ -1,7 +1,0 @@
-build-essential [platform:dpkg]
-liblzma-dev [platform:dpkg]
-xz-devel [platform:rpm]
-zlib1g-dev [platform:dpkg]
-zlib-devel [platform:rpm]
-libselinux-utils [platform:rpm]
-yum [platform:rpm]

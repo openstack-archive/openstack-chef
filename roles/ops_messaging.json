@@ -1,8 +1,0 @@
-{
-  "name": "ops_messaging",
-  "description": "Deploy ops-messaging cookbook",
-  "run_list": [
-    "role[common]",
-    "recipe[openstack-ops-messaging::rabbitmq-server]"
-  ]
-}

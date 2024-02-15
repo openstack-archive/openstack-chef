@@ -1,8 +1,0 @@
-{
-  "name": "orchestration_test",
-  "description": "Orchestration cookbook tests",
-  "override_attributes": {},
-  "run_list": [
-    "recipe[openstack-integration-test::orchestration]"
-  ]
-}
